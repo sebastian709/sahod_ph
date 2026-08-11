@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sebastian709.github.io/sahod_ph/sitemap.xml
+Sitemap: https://sahodph.online/sitemap.xml
