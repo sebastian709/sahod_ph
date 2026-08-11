@@ -53,4 +53,4 @@ The informational pages use the same responsive Bootstrap design and clearly sta
 
 ## SEO deployment note
 
-The canonical URLs, Open Graph URLs, `sitemap.xml`, and `robots.txt` currently use `https://sahodph.github.io/ph-salary-calculator/` as the expected GitHub Pages base URL. Update that base URL in those files when the repository is connected to a different GitHub account, project path, or custom domain.
+The canonical URLs, Open Graph URLs, `sitemap.xml`, and `robots.txt` use `https://sebastian709.github.io/sahod_ph/` as the GitHub Pages project-site base URL.

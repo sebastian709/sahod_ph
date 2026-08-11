@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sahodph.github.io/ph-salary-calculator/sitemap.xml
+Sitemap: https://sebastian709.github.io/sahod_ph/sitemap.xml
