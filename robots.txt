@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sahodph.github.io/ph-salary-calculator/sitemap.xml

@@ -1,0 +1,49 @@
+:root { --brand-blue: #0d6efd; --ink: #14213d; --soft-blue: #eef5ff; --logo-navy: #011f45; --header-white: #ffffff; }
+* { box-sizing: border-box; }
+body { min-width: 320px; color: var(--ink); background: #f8fafc; }
+.site-header { position: relative; z-index: 1; background-color: var(--header-white) !important; }
+.navbar-brand { display: inline-flex; align-items: center; background-color: var(--header-white); }
+.navbar-brand img { display: block; width: auto; max-width: min(220px, 60vw); object-fit: contain; }
+.hero-section { background: linear-gradient(180deg, #eef5ff 0%, #f8fafc 100%); }
+.eyebrow { color: var(--brand-blue); font-size: .75rem; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; }
+.hero-section h1 { letter-spacing: -.045em; }
+.calculator-card, .result-card { border-radius: .75rem; }
+.calculator-card { background: #fff; }
+.calculator-card .form-control, .calculator-card .input-group-text { border-color: #ced8e5; }
+.calculator-card .form-control:focus { border-color: var(--brand-blue); box-shadow: 0 0 0 .25rem rgba(13, 110, 253, .12); }
+.calculator-card .input-group-text { color: var(--brand-blue); background: var(--soft-blue); font-weight: 700; }
+.calculator-card .btn { padding-block: .8rem; }
+.mode-switch { border: 0; margin: 0; padding: 0; }
+.mode-switch .btn { padding-block: .55rem; font-size: .9rem; }
+.mode-switch .btn-check:checked + .btn { color: #fff; background-color: var(--brand-blue); }
+.advanced-inputs { border-top: 1px solid #e5eaf1; border-bottom: 1px solid #e5eaf1; padding: .9rem 0; }
+.advanced-inputs summary { color: var(--brand-blue); cursor: pointer; list-style-position: outside; }
+.advanced-inputs summary::marker { font-size: .8rem; }
+.advanced-inputs .form-label { font-size: .9rem; }
+.advanced-inputs .input-group-text { font-size: .85rem; }
+.advanced-inputs .input-note { color: #64748b; background: #f8fafc; font-size: .75rem; font-weight: 500; }
+.breakdown-list .advanced-result-row { display: none; }
+.result-card.advanced-mode .advanced-result-row { display: flex; }
+.result-card { color: #fff; background: #14213d; }
+.result-card .eyebrow { color: #9fc5ff; }
+.breakdown-list { display: grid; gap: 1rem; }
+.breakdown-row { display: flex; justify-content: space-between; gap: 1rem; color: rgba(255, 255, 255, .75); }
+.breakdown-row dt, .breakdown-row dd { margin: 0; }
+.breakdown-row dd { color: #fff; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.gross-row { padding-bottom: 1rem; border-bottom: 1px solid rgba(255, 255, 255, .18); color: #fff; font-weight: 700; }
+.take-home-row { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; color: #fff; font-weight: 600; }
+.take-home-row strong { color: #8fc1ff; font-size: clamp(1.7rem, 5vw, 2.35rem); font-variant-numeric: tabular-nums; letter-spacing: -.04em; white-space: nowrap; }
+.effective-deduction-row { display: flex; justify-content: space-between; gap: 1rem; color: rgba(255, 255, 255, .7); font-size: .85rem; }
+.effective-deduction-row strong { color: #fff; font-variant-numeric: tabular-nums; }
+.ad-slot { display: grid; min-height: 90px; place-items: center; border: 1px dashed #cbd5e1; color: #94a3b8; font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; }
+.ad-slot--below-header, .ad-slot--bottom { width: min(728px, calc(100% - 2rem)); margin-inline: auto; }
+.ad-slot--below-header { margin-top: 1rem; }
+.ad-slot--bottom { margin-top: 2rem; margin-bottom: 2rem; }
+.how-section { background: #fff; }
+.calculation-list { border-top: 1px solid #e5eaf1; }
+.calculation-list .list-group-item { border-color: #e5eaf1; background: transparent; }
+.related-links { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; }
+.related-links a { color: var(--brand-blue); text-decoration: none; }
+.related-links a:hover { text-decoration: underline; }
+.info-section { background: #fff; }
+@media (max-width: 575.98px) { .hero-section { padding-top: 3rem !important; } .hero-section h1 { font-size: 2.4rem; } .take-home-row { align-items: flex-start; flex-direction: column; gap: .35rem; } }
