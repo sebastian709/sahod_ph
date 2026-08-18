@@ -1,94 +1,194 @@
 <!doctype html>
 <html lang="en">
+
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EEPV96HLTC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-EEPV96HLTC');
+  </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Philippine salary calculator for estimating gross salary, SSS, PhilHealth, Pag-IBIG, withholding tax, and monthly take-home pay.">
+  <meta name="description"
+    content="Philippine salary calculator for estimating gross salary, SSS, PhilHealth, Pag-IBIG, withholding tax, and monthly take-home pay.">
   <meta name="theme-color" content="#0d6efd">
   <link rel="canonical" href="https://sahodph.online/">
   <meta property="og:title" content="Philippine Salary Calculator | SahodPH">
-  <meta property="og:description" content="Estimate monthly gross salary, standard deductions, withholding tax, and take-home pay in the Philippines.">
+  <meta property="og:description"
+    content="Estimate monthly gross salary, standard deductions, withholding tax, and take-home pay in the Philippines.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sahodph.online/">
   <meta property="og:site_name" content="SahodPH">
   <meta property="og:image" content="https://sahodph.online/assets/img/sahodph-main-logo.png">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Philippine Salary Calculator | SahodPH">
-  <meta name="twitter:description" content="Estimate monthly gross salary, standard deductions, withholding tax, and take-home pay in the Philippines.">
+  <meta name="twitter:description"
+    content="Estimate monthly gross salary, standard deductions, withholding tax, and take-home pay in the Philippines.">
   <meta name="twitter:image" content="https://sahodph.online/assets/img/sahodph-main-logo.png">
   <title>Philippine Salary Calculator: Estimate Take-Home Pay | SahodPH</title>
   <link rel="icon" type="image/png" href="assets/img/sahodph-icon.png">
   <link rel="apple-touch-icon" href="assets/img/sahodph-icon.png">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/style.css">
   <script src="assets/js/salary.js" defer></script>
   <script src="assets/js/ad-placeholders.js" defer></script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6021896522356181"
-      crossorigin="anonymous"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6021896522356181"
+    crossorigin="anonymous"></script>
 </head>
+
 <body>
   <header class="site-header border-bottom bg-white">
     <nav class="container py-3 d-flex align-items-center justify-content-between" aria-label="Primary navigation">
-      <a class="navbar-brand" href="./" aria-label="SahodPH home"><img src="assets/img/sahodph-horizontal-logo.png" alt="SahodPH salary calculator logo" height="42"></a>
+      <a class="navbar-brand" href="./" aria-label="SahodPH home"><img src="assets/img/sahodph-horizontal-logo.png"
+          alt="SahodPH salary calculator logo" height="42"></a>
       <a class="btn btn-sm btn-outline-primary" href="compare.html">Compare Salaries</a>
     </nav>
   </header>
   <main>
     <section class="hero-section py-5">
-      <div class="container"><div class="row justify-content-center text-center"><div class="col-lg-8">
-        <p class="eyebrow mb-2">SahodPH</p>
-        <h1 class="display-5 fw-bold mb-3">Philippine Salary Calculator</h1>
-        <p class="lead text-secondary mb-0">Estimate your gross salary, standard salary deductions, withholding tax, and monthly take-home pay in the Philippines.</p>
-      </div></div></div>
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-8">
+            <p class="eyebrow mb-2">SahodPH</p>
+            <h1 class="display-5 fw-bold mb-3">Philippine Salary Calculator</h1>
+            <p class="lead text-secondary mb-0">Estimate your gross salary, standard salary deductions, withholding tax,
+              and monthly take-home pay in the Philippines.</p>
+          </div>
+        </div>
+      </div>
     </section>
     <section class="calculator-section pb-5" aria-labelledby="calculator-heading">
-      <div class="container"><div class="row g-4 justify-content-center">
-        <div class="col-lg-6"><div class="calculator-card card border-0 shadow-sm h-100"><div class="card-body p-4 p-md-5">
-          <h2 id="calculator-heading" class="h4 fw-bold mb-2">Calculate your Philippine salary</h2>
-          <p class="text-secondary small mb-4">Enter your monthly earnings for an estimated net pay breakdown.</p>
-          <form id="salary-form" novalidate>
-            <fieldset class="mode-switch mb-4">
-              <legend class="visually-hidden">Calculation mode</legend>
-              <div class="btn-group w-100" role="group" aria-label="Calculation mode">
-                <input class="btn-check" type="radio" name="calculationMode" id="basic-mode" value="basic" checked>
-                <label class="btn btn-outline-primary" for="basic-mode">Basic</label>
-                <input class="btn-check" type="radio" name="calculationMode" id="advanced-mode" value="advanced">
-                <label class="btn btn-outline-primary" for="advanced-mode">Advanced</label>
+      <div class="container">
+        <div class="row g-4 justify-content-center">
+          <div class="col-lg-6">
+            <div class="calculator-card card border-0 shadow-sm h-100">
+              <div class="card-body p-4 p-md-5">
+                <h2 id="calculator-heading" class="h4 fw-bold mb-2">Calculate your Philippine salary</h2>
+                <p class="text-secondary small mb-4">Enter your monthly earnings for an estimated net pay breakdown.</p>
+                <form id="salary-form" novalidate>
+                  <fieldset class="mode-switch mb-4">
+                    <legend class="visually-hidden">Calculation mode</legend>
+                    <div class="btn-group w-100" role="group" aria-label="Calculation mode">
+                      <input class="btn-check" type="radio" name="calculationMode" id="basic-mode" value="basic"
+                        checked>
+                      <label class="btn btn-outline-primary" for="basic-mode">Basic</label>
+                      <input class="btn-check" type="radio" name="calculationMode" id="advanced-mode" value="advanced">
+                      <label class="btn btn-outline-primary" for="advanced-mode">Advanced</label>
+                    </div>
+                  </fieldset>
+                  <div class="mb-3"><label class="form-label fw-semibold" for="basic-salary">Basic Monthly
+                      Salary</label>
+                    <div class="input-group input-group-lg"><span class="input-group-text"
+                        aria-hidden="true">₱</span><input class="form-control" id="basic-salary" name="basicSalary"
+                        type="number" min="0" step="0.01" value="20000" inputmode="decimal" autocomplete="off" required>
+                    </div>
+                  </div>
+                  <details class="advanced-inputs mb-4" id="advanced-inputs">
+                    <summary class="fw-semibold">Add allowances, overtime, or bonuses <span
+                        class="fw-normal text-secondary">(optional)</span></summary>
+                    <div class="pt-3">
+                      <div class="mb-3"><label class="form-label fw-semibold" for="taxable-allowances">Other Taxable
+                          Allowances</label>
+                        <div class="input-group"><span class="input-group-text" aria-hidden="true">₱</span><input
+                            class="form-control" id="taxable-allowances" name="taxableAllowances" type="number" min="0"
+                            step="0.01" value="0" inputmode="decimal" autocomplete="off"><span
+                            class="input-group-text input-note">Taxable</span></div>
+                      </div>
+                      <div class="mb-3"><label class="form-label fw-semibold" for="nontaxable-allowances">Other
+                          Non-taxable Allowances</label>
+                        <div class="input-group"><span class="input-group-text" aria-hidden="true">₱</span><input
+                            class="form-control" id="nontaxable-allowances" name="nontaxableAllowances" type="number"
+                            min="0" step="0.01" value="0" inputmode="decimal" autocomplete="off"><span
+                            class="input-group-text input-note">Non-taxable</span></div>
+                      </div>
+                      <div class="mb-3"><label class="form-label fw-semibold" for="overtime-pay">Overtime Pay</label>
+                        <div class="input-group"><span class="input-group-text" aria-hidden="true">₱</span><input
+                            class="form-control" id="overtime-pay" name="overtimePay" type="number" min="0" step="0.01"
+                            value="0" inputmode="decimal" autocomplete="off"><span
+                            class="input-group-text input-note">Taxable</span></div>
+                      </div>
+                      <div class="mb-3"><label class="form-label fw-semibold" for="night-differential">Night
+                          Differential</label>
+                        <div class="input-group"><span class="input-group-text" aria-hidden="true">₱</span><input
+                            class="form-control" id="night-differential" name="nightDifferential" type="number" min="0"
+                            step="0.01" value="0" inputmode="decimal" autocomplete="off"><span
+                            class="input-group-text input-note">Taxable</span></div>
+                      </div>
+                      <div><label class="form-label fw-semibold" for="bonuses">Bonuses / Incentives</label>
+                        <div class="input-group"><span class="input-group-text" aria-hidden="true">₱</span><input
+                            class="form-control" id="bonuses" name="bonuses" type="number" min="0" step="0.01" value="0"
+                            inputmode="decimal" autocomplete="off"><span
+                            class="input-group-text input-note">Taxable</span></div>
+                      </div>
+                    </div>
+                  </details>
+                  <button class="btn btn-primary btn-lg w-100" type="submit">Calculate Salary <span
+                      aria-hidden="true">→</span></button>
+                </form>
               </div>
-            </fieldset>
-            <div class="mb-3"><label class="form-label fw-semibold" for="basic-salary">Basic Monthly Salary</label><div class="input-group input-group-lg"><span class="input-group-text" aria-hidden="true">₱</span><input class="form-control" id="basic-salary" name="basicSalary" type="number" min="0" step="0.01" value="20000" inputmode="decimal" autocomplete="off" required></div></div>
-            <details class="advanced-inputs mb-4" id="advanced-inputs">
-              <summary class="fw-semibold">Add allowances, overtime, or bonuses <span class="fw-normal text-secondary">(optional)</span></summary>
-              <div class="pt-3">
-                <div class="mb-3"><label class="form-label fw-semibold" for="taxable-allowances">Other Taxable Allowances</label><div class="input-group"><span class="input-group-text" aria-hidden="true">₱</span><input class="form-control" id="taxable-allowances" name="taxableAllowances" type="number" min="0" step="0.01" value="0" inputmode="decimal" autocomplete="off"><span class="input-group-text input-note">Taxable</span></div></div>
-                <div class="mb-3"><label class="form-label fw-semibold" for="nontaxable-allowances">Other Non-taxable Allowances</label><div class="input-group"><span class="input-group-text" aria-hidden="true">₱</span><input class="form-control" id="nontaxable-allowances" name="nontaxableAllowances" type="number" min="0" step="0.01" value="0" inputmode="decimal" autocomplete="off"><span class="input-group-text input-note">Non-taxable</span></div></div>
-                <div class="mb-3"><label class="form-label fw-semibold" for="overtime-pay">Overtime Pay</label><div class="input-group"><span class="input-group-text" aria-hidden="true">₱</span><input class="form-control" id="overtime-pay" name="overtimePay" type="number" min="0" step="0.01" value="0" inputmode="decimal" autocomplete="off"><span class="input-group-text input-note">Taxable</span></div></div>
-                <div class="mb-3"><label class="form-label fw-semibold" for="night-differential">Night Differential</label><div class="input-group"><span class="input-group-text" aria-hidden="true">₱</span><input class="form-control" id="night-differential" name="nightDifferential" type="number" min="0" step="0.01" value="0" inputmode="decimal" autocomplete="off"><span class="input-group-text input-note">Taxable</span></div></div>
-                <div><label class="form-label fw-semibold" for="bonuses">Bonuses / Incentives</label><div class="input-group"><span class="input-group-text" aria-hidden="true">₱</span><input class="form-control" id="bonuses" name="bonuses" type="number" min="0" step="0.01" value="0" inputmode="decimal" autocomplete="off"><span class="input-group-text input-note">Taxable</span></div></div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="result-card card border-0 shadow-sm h-100" aria-live="polite">
+              <div class="card-body p-4 p-md-5">
+                <p class="eyebrow text-white-50 mb-2">Your estimate</p>
+                <h2 class="h4 fw-bold mb-4">Salary Breakdown</h2>
+                <dl class="breakdown-list mb-4">
+                  <div class="breakdown-row gross-row">
+                    <dt>Gross Monthly Income</dt>
+                    <dd id="gross-result">₱42,000.00</dd>
+                  </div>
+                  <div class="breakdown-row advanced-result-row">
+                    <dt>Taxable Compensation</dt>
+                    <dd id="taxable-result">₱42,000.00</dd>
+                  </div>
+                  <div class="breakdown-row advanced-result-row">
+                    <dt>Non-taxable Allowances</dt>
+                    <dd id="nontaxable-result">₱0.00</dd>
+                  </div>
+                  <div class="breakdown-row advanced-result-row">
+                    <dt>SSS</dt>
+                    <dd id="sss-result">₱1,750.00</dd>
+                  </div>
+                  <div class="breakdown-row advanced-result-row">
+                    <dt>PhilHealth</dt>
+                    <dd id="philhealth-result">₱1,050.00</dd>
+                  </div>
+                  <div class="breakdown-row advanced-result-row">
+                    <dt>Pag-IBIG</dt>
+                    <dd id="pagibig-result">₱200.00</dd>
+                  </div>
+                  <div class="breakdown-row">
+                    <dt>Government Contributions</dt>
+                    <dd id="contributions-result">₱3,000.00</dd>
+                  </div>
+                  <div class="breakdown-row">
+                    <dt>Withholding Tax</dt>
+                    <dd id="tax-result">₱3,008.33</dd>
+                  </div>
+                  <div class="breakdown-row">
+                    <dt>Total Deductions</dt>
+                    <dd id="deductions-result">₱6,008.33</dd>
+                  </div>
+                </dl>
+                <div class="take-home-row border-top pt-4"><span>Estimated Take-Home</span><strong
+                    id="net-pay">₱35,991.67</strong></div>
+                <div class="effective-deduction-row mt-3"><span>Effective deduction percentage</span><strong
+                    id="effective-deduction">14.31%</strong></div>
+                <p class="small text-white-50 mt-3 mb-0">This is an estimate. Actual deductions may vary based on your
+                  employer, benefits, and the latest government tables.</p>
               </div>
-            </details>
-            <button class="btn btn-primary btn-lg w-100" type="submit">Calculate Salary <span aria-hidden="true">→</span></button>
-          </form>
-        </div></div></div>
-        <div class="col-lg-6"><div class="result-card card border-0 shadow-sm h-100" aria-live="polite"><div class="card-body p-4 p-md-5">
-          <p class="eyebrow text-white-50 mb-2">Your estimate</p><h2 class="h4 fw-bold mb-4">Salary Breakdown</h2>
-          <dl class="breakdown-list mb-4">
-            <div class="breakdown-row gross-row"><dt>Gross Monthly Income</dt><dd id="gross-result">₱42,000.00</dd></div>
-            <div class="breakdown-row advanced-result-row"><dt>Taxable Compensation</dt><dd id="taxable-result">₱42,000.00</dd></div>
-            <div class="breakdown-row advanced-result-row"><dt>Non-taxable Allowances</dt><dd id="nontaxable-result">₱0.00</dd></div>
-            <div class="breakdown-row advanced-result-row"><dt>SSS</dt><dd id="sss-result">₱1,750.00</dd></div>
-            <div class="breakdown-row advanced-result-row"><dt>PhilHealth</dt><dd id="philhealth-result">₱1,050.00</dd></div>
-            <div class="breakdown-row advanced-result-row"><dt>Pag-IBIG</dt><dd id="pagibig-result">₱200.00</dd></div>
-            <div class="breakdown-row"><dt>Government Contributions</dt><dd id="contributions-result">₱3,000.00</dd></div>
-            <div class="breakdown-row"><dt>Withholding Tax</dt><dd id="tax-result">₱3,008.33</dd></div>
-            <div class="breakdown-row"><dt>Total Deductions</dt><dd id="deductions-result">₱6,008.33</dd></div>
-          </dl>
-          <div class="take-home-row border-top pt-4"><span>Estimated Take-Home</span><strong id="net-pay">₱35,991.67</strong></div>
-          <div class="effective-deduction-row mt-3"><span>Effective deduction percentage</span><strong id="effective-deduction">14.31%</strong></div>
-          <p class="small text-white-50 mt-3 mb-0">This is an estimate. Actual deductions may vary based on your employer, benefits, and the latest government tables.</p>
-        </div></div></div>
-      </div><div class="ad-slot mt-4" aria-label="Advertisement">Advertisement</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="ad-slot mt-4" aria-label="Advertisement">Advertisement</div>
+      </div>
     </section>
     <section class="how-section border-top py-5" aria-labelledby="how-calculated-heading">
       <div class="container">
@@ -96,60 +196,135 @@
           <div class="col-lg-9">
             <p class="eyebrow mb-2">Understand your estimate</p>
             <h2 id="how-calculated-heading" class="h3 fw-bold mb-3">How SahodPH estimates take-home pay</h2>
-            <p class="text-secondary mb-4">This Philippine salary calculator starts with the monthly income you enter, estimates standard employee contributions and withholding tax, then shows the estimated take-home pay. Use Advanced mode when you need to include allowances, overtime, night differential, or bonuses.</p>
+            <p class="text-secondary mb-4">This Philippine salary calculator starts with the monthly income you enter,
+              estimates standard employee contributions and withholding tax, then shows the estimated take-home pay. Use
+              Advanced mode when you need to include allowances, overtime, night differential, or bonuses.</p>
             <div class="list-group list-group-flush calculation-list">
               <div class="list-group-item px-0 py-3">
                 <h3 class="h6 fw-bold mb-1">Gross salary</h3>
-                <p class="text-secondary mb-0">Gross salary is your total monthly income before deductions. It can include basic salary, taxable allowances, non-taxable allowances, overtime, night differential, and bonuses or incentives.</p>
+                <p class="text-secondary mb-0">Gross salary is your total monthly income before deductions. It can
+                  include basic salary, taxable allowances, non-taxable allowances, overtime, night differential, and
+                  bonuses or incentives.</p>
               </div>
               <div class="list-group-item px-0 py-3">
                 <h3 class="h6 fw-bold mb-1">SSS contribution</h3>
-                <p class="text-secondary mb-0">The calculator estimates your employee share of the Social Security System contribution using the applicable salary credit limits and contribution schedule.</p>
+                <p class="text-secondary mb-0">The calculator estimates your employee share of the Social Security
+                  System contribution using the applicable salary credit limits and contribution schedule.</p>
               </div>
               <div class="list-group-item px-0 py-3">
                 <h3 class="h6 fw-bold mb-1">PhilHealth contribution</h3>
-                <p class="text-secondary mb-0">PhilHealth is estimated from the applicable premium rate and income floor and ceiling, with the employee share shown as a monthly deduction.</p>
+                <p class="text-secondary mb-0">PhilHealth is estimated from the applicable premium rate and income floor
+                  and ceiling, with the employee share shown as a monthly deduction.</p>
               </div>
               <div class="list-group-item px-0 py-3">
                 <h3 class="h6 fw-bold mb-1">Pag-IBIG contribution</h3>
-                <p class="text-secondary mb-0">The Pag-IBIG amount represents the estimated employee contribution based on the applicable compensation tier and contribution cap.</p>
+                <p class="text-secondary mb-0">The Pag-IBIG amount represents the estimated employee contribution based
+                  on the applicable compensation tier and contribution cap.</p>
               </div>
               <div class="list-group-item px-0 py-3">
                 <h3 class="h6 fw-bold mb-1">Taxable income</h3>
-                <p class="text-secondary mb-0">Taxable income includes the earnings entered as taxable and excludes allowances marked non-taxable. Mandatory employee contributions are then considered before estimating withholding tax.</p>
+                <p class="text-secondary mb-0">Taxable income includes the earnings entered as taxable and excludes
+                  allowances marked non-taxable. Mandatory employee contributions are then considered before estimating
+                  withholding tax.</p>
               </div>
               <div class="list-group-item px-0 py-3">
                 <h3 class="h6 fw-bold mb-1">Withholding tax</h3>
-                <p class="text-secondary mb-0">Withholding tax is an estimate based on the applicable Philippine income-tax brackets for monthly compensation. Your employer’s payroll calculation may use additional details.</p>
+                <p class="text-secondary mb-0">Withholding tax is an estimate based on the applicable Philippine
+                  income-tax brackets for monthly compensation. Your employer’s payroll calculation may use additional
+                  details.</p>
               </div>
               <div class="list-group-item px-0 pt-3 pb-0">
                 <h3 class="h6 fw-bold mb-1">Estimated take-home pay</h3>
-                <p class="text-secondary mb-0">Estimated take-home pay is your gross monthly income less government contributions and estimated withholding tax.</p>
+                <p class="text-secondary mb-0">Estimated take-home pay is your gross monthly income less government
+                  contributions and estimated withholding tax.</p>
               </div>
             </div>
-            <p class="small text-secondary mt-4 mb-0"><strong>Disclaimer:</strong> This calculator provides an estimate for informational purposes only. Actual payroll deductions may vary depending on your employment situation, payroll policies, benefits, exemptions, and applicable government rules.</p>
+            <p class="small text-secondary mt-4 mb-0"><strong>Disclaimer:</strong> This calculator provides an estimate
+              for informational purposes only. Actual payroll deductions may vary depending on your employment
+              situation, payroll policies, benefits, exemptions, and applicable government rules.</p>
           </div>
         </div>
       </div>
     </section>
-    <section class="info-section border-top py-5" aria-labelledby="salary-calculator-about-heading"><div class="container"><div class="row justify-content-center"><div class="col-lg-8">
-      <h2 id="salary-calculator-about-heading" class="h4 fw-bold">What is a salary calculator in the Philippines?</h2>
-      <p class="text-secondary mb-0">A Philippine salary calculator helps you estimate the difference between gross pay and net pay. SahodPH brings together the earnings you enter, estimated SSS, PhilHealth, Pag-IBIG, and withholding tax so you can better understand your monthly salary computation before payroll is processed.</p>
-    </div></div></div></section>
-    <section class="info-section border-top py-5" aria-labelledby="example-heading"><div class="container"><div class="row justify-content-center"><div class="col-lg-8">
-      <h2 id="example-heading" class="h4 fw-bold">Example salary computation</h2>
-      <p class="text-secondary mb-0">For a quick estimate, enter your basic monthly salary, then add any applicable taxable or non-taxable allowances, overtime, night differential, or bonuses in Advanced mode. The breakdown separates gross income, government contributions, estimated withholding tax, total deductions, and estimated net pay.</p>
-    </div></div></div></section>
-    <section class="info-section border-top py-5" aria-labelledby="faq-heading"><div class="container"><div class="row justify-content-center"><div class="col-lg-8">
-      <h2 id="faq-heading" class="h4 fw-bold mb-3">Philippine salary calculator FAQs</h2>
-      <div class="list-group list-group-flush calculation-list">
-        <div class="list-group-item px-0 py-3"><h3 class="h6 fw-bold mb-1">Does this calculate take-home pay in the Philippines?</h3><p class="text-secondary mb-0">Yes. The calculator estimates monthly take-home pay by subtracting estimated government contributions and withholding tax from your gross monthly income.</p></div>
-        <div class="list-group-item px-0 py-3"><h3 class="h6 fw-bold mb-1">Which salary deductions are included?</h3><p class="text-secondary mb-0">The estimate shows employee SSS, PhilHealth, Pag-IBIG, and withholding tax, along with total deductions.</p></div>
-        <div class="list-group-item px-0 pt-3 pb-0"><h3 class="h6 fw-bold mb-1">Is this the same as my employer's payroll?</h3><p class="text-secondary mb-0">No. This is an informational estimate. Actual payroll can vary with benefits, exemptions, payroll policies, and applicable government rules.</p></div>
+    <section class="info-section border-top py-5" aria-labelledby="salary-calculator-about-heading">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <h2 id="salary-calculator-about-heading" class="h4 fw-bold">What is a salary calculator in the Philippines?
+            </h2>
+            <p class="text-secondary mb-0">A Philippine salary calculator helps you estimate the difference between
+              gross pay and net pay. SahodPH brings together the earnings you enter, estimated SSS, PhilHealth,
+              Pag-IBIG, and withholding tax so you can better understand your monthly salary computation before payroll
+              is processed.</p>
+          </div>
+        </div>
       </div>
-    </div></div></div></section>
-    <section class="info-section border-top py-5"><div class="container"><div class="row justify-content-center"><div class="col-lg-8"><p class="eyebrow mb-2">More salary tools</p><h2 class="h4 fw-bold mb-3">Related Philippine payroll calculators</h2><p class="text-secondary">Calculate other parts of your compensation with these SahodPH tools.</p><nav class="related-links" aria-label="Related Philippine payroll calculators"><a href="thirteenth-month-pay.html">13th month pay calculator</a><a href="overtime-pay.html">Overtime pay calculator</a><a href="daily-rate.html">Daily rate calculator</a><a href="hourly-rate.html">Hourly rate calculator</a><a href="night-differential.html">Night differential calculator</a><a href="holiday-pay.html">Holiday pay calculator</a><a href="compare.html">Compare salaries</a></nav></div></div></div></section>
+    </section>
+    <section class="info-section border-top py-5" aria-labelledby="example-heading">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <h2 id="example-heading" class="h4 fw-bold">Example salary computation</h2>
+            <p class="text-secondary mb-0">For a quick estimate, enter your basic monthly salary, then add any
+              applicable taxable or non-taxable allowances, overtime, night differential, or bonuses in Advanced mode.
+              The breakdown separates gross income, government contributions, estimated withholding tax, total
+              deductions, and estimated net pay.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="info-section border-top py-5" aria-labelledby="faq-heading">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <h2 id="faq-heading" class="h4 fw-bold mb-3">Philippine salary calculator FAQs</h2>
+            <div class="list-group list-group-flush calculation-list">
+              <div class="list-group-item px-0 py-3">
+                <h3 class="h6 fw-bold mb-1">Does this calculate take-home pay in the Philippines?</h3>
+                <p class="text-secondary mb-0">Yes. The calculator estimates monthly take-home pay by subtracting
+                  estimated government contributions and withholding tax from your gross monthly income.</p>
+              </div>
+              <div class="list-group-item px-0 py-3">
+                <h3 class="h6 fw-bold mb-1">Which salary deductions are included?</h3>
+                <p class="text-secondary mb-0">The estimate shows employee SSS, PhilHealth, Pag-IBIG, and withholding
+                  tax, along with total deductions.</p>
+              </div>
+              <div class="list-group-item px-0 pt-3 pb-0">
+                <h3 class="h6 fw-bold mb-1">Is this the same as my employer's payroll?</h3>
+                <p class="text-secondary mb-0">No. This is an informational estimate. Actual payroll can vary with
+                  benefits, exemptions, payroll policies, and applicable government rules.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="info-section border-top py-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <p class="eyebrow mb-2">More salary tools</p>
+            <h2 class="h4 fw-bold mb-3">Related Philippine payroll calculators</h2>
+            <p class="text-secondary">Calculate other parts of your compensation with these SahodPH tools.</p>
+            <nav class="related-links" aria-label="Related Philippine payroll calculators"><a
+                href="thirteenth-month-pay.html">13th month pay calculator</a><a href="overtime-pay.html">Overtime pay
+                calculator</a><a href="daily-rate.html">Daily rate calculator</a><a href="hourly-rate.html">Hourly rate
+                calculator</a><a href="night-differential.html">Night differential calculator</a><a
+                href="holiday-pay.html">Holiday pay calculator</a><a href="compare.html">Compare salaries</a></nav>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer class="border-top bg-white py-4"><div class="container"><nav class="related-links small" aria-label="Footer navigation"><a href="./">Salary calculator</a><a href="compare.html">Compare salaries</a><a href="about.html">About</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-use.html">Terms of Use</a><a href="disclaimer.html">Disclaimer</a><a href="contact.html">Contact</a></nav><p class="small text-secondary mb-0 mt-3">© 2026 SahodPH. Independent informational calculator website.</p></div></footer>
+  <footer class="border-top bg-white py-4">
+    <div class="container">
+      <nav class="related-links small" aria-label="Footer navigation"><a href="./">Salary calculator</a><a
+          href="compare.html">Compare salaries</a><a href="about.html">About</a><a href="privacy-policy.html">Privacy
+          Policy</a><a href="terms-of-use.html">Terms of Use</a><a href="disclaimer.html">Disclaimer</a><a
+          href="contact.html">Contact</a></nav>
+      <p class="small text-secondary mb-0 mt-3">© 2026 SahodPH. Independent informational calculator website.</p>
+    </div>
+  </footer>
 </body>
+
 </html>
