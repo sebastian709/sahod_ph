@@ -107,18 +107,262 @@
         <div class="ad-slot mt-4" aria-label="Advertisement">Advertisement</div>
       </div>
     </section>
-    <section class="how-section border-top py-5">
+    <section class="how-section border-top py-5" aria-labelledby="overtime-guide-heading">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-8">
-            <p class="eyebrow mb-2">How it works</p>
-            <h2 class="h3 fw-bold mb-3">How overtime pay is calculated</h2>
-            <p class="text-secondary mb-0">Estimated overtime pay equals your hourly rate multiplied by overtime hours
-              and the selected overtime multiplier. Philippine overtime rules vary by ordinary days, rest days, special
-              non-working days, and regular holidays.</p>
-            <p class="small text-secondary mt-4 mb-0"><strong>Disclaimer:</strong> This calculator provides an estimate
-              for informational purposes only. Actual overtime pay may vary depending on your employment situation,
-              payroll policies, schedule, and applicable government rules.</p>
+
+            <p class="eyebrow mb-2">Overtime pay guide</p>
+
+            <h2 id="overtime-guide-heading" class="h3 fw-bold mb-3">
+              How overtime pay is calculated
+            </h2>
+
+            <p class="text-secondary mb-4">
+              Overtime pay is additional compensation for qualifying work performed
+              beyond the employee's regular working hours. The amount can depend on
+              the employee's hourly rate, the number of overtime hours, and the
+              applicable premium for the day or situation.
+            </p>
+
+            <h3 class="h5 fw-bold mt-4 mb-2">
+              Overtime pay formula
+            </h3>
+
+            <div class="bg-light rounded p-4 my-3">
+              <strong>
+                Estimated overtime pay =
+                Hourly rate × overtime hours × applicable multiplier
+              </strong>
+            </div>
+
+            <p class="text-secondary">
+              For example, if your hourly rate is <strong>₱250</strong> and you
+              worked <strong>2 overtime hours</strong> using the 125% option:
+            </p>
+
+            <div class="bg-light rounded p-4 mb-4">
+              <strong>
+                ₱250 × 2 × 1.25 = ₱625
+              </strong>
+            </div>
+
+            <p class="text-secondary">
+              The result represents the estimated overtime compensation for the
+              hours entered. It is separate from the employee's regular pay for
+              the normal working hours.
+            </p>
+
+            <h3 class="h5 fw-bold mt-5 mb-3">
+              Overtime situations in this calculator
+            </h3>
+
+            <p class="text-secondary mb-4">
+              The calculator provides different options because overtime treatment
+              can depend on the type of day on which the additional work is
+              performed.
+            </p>
+
+            <div class="table-responsive">
+              <table class="table table-bordered align-middle">
+                <thead class="table-light">
+                  <tr>
+                    <th scope="col">Situation</th>
+                    <th scope="col">Calculator multiplier</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Ordinary day</td>
+                    <td>125%</td>
+                  </tr>
+                  <tr>
+                    <td>Rest day or special day</td>
+                    <td>130%</td>
+                  </tr>
+                  <tr>
+                    <td>Regular holiday</td>
+                    <td>200%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p class="small text-secondary">
+              These are the options currently implemented in the SahodPH calculator.
+              The applicable rate for a particular employee can depend on the day,
+              work schedule, holiday classification, employment arrangement, and
+              applicable labor rules.
+            </p>
+
+            <h3 class="h5 fw-bold mt-5 mb-2">
+              Why your overtime pay may be different
+            </h3>
+
+            <p class="text-secondary">
+              The calculator provides a simplified estimate based on the hourly rate,
+              overtime hours, and multiplier you select. Actual payroll can involve
+              additional factors that are not represented by this tool.
+            </p>
+
+            <p class="text-secondary mb-3">
+              Differences can result from factors such as:
+            </p>
+
+            <ul class="text-secondary">
+              <li>The employee's regular work schedule</li>
+              <li>The classification of the day worked</li>
+              <li>Holiday or rest-day status</li>
+              <li>Applicable company payroll policies</li>
+              <li>Other compensation or payroll adjustments</li>
+            </ul>
+
+            <h3 class="h5 fw-bold mt-5 mb-2">
+              Overtime pay is different from your regular hourly pay
+            </h3>
+
+            <p class="text-secondary">
+              Your regular hourly rate represents your normal compensation for each
+              regular working hour. Overtime pay applies an additional premium to
+              qualifying hours worked beyond the regular schedule.
+            </p>
+
+            <p class="text-secondary">
+              For this reason, you should not assume that every additional hour is
+              automatically paid at the same rate as a regular working hour.
+            </p>
+
+            <h3 class="h5 fw-bold mt-5 mb-2">
+              What this calculator does not determine
+            </h3>
+
+            <p class="text-secondary">
+              This calculator does not determine whether particular work qualifies
+              as overtime or which legal rate applies to a specific employment
+              situation. It estimates the amount based on the inputs and multiplier
+              selected by the user.
+            </p>
+
+            <p class="text-secondary">
+              If you are checking an actual payslip or overtime dispute, compare the
+              result with your employment contract, company payroll policy, and the
+              applicable official labor guidance.
+            </p>
+
+            <p class="small text-secondary mt-4 mb-0">
+              <strong>Disclaimer:</strong>
+              This calculator provides an estimate for informational and planning
+              purposes only. Actual overtime pay may vary depending on your
+              employment situation, work schedule, holiday or rest-day status,
+              payroll policies, and applicable government rules.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="info-section border-top py-5" aria-labelledby="overtime-faq-heading">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+
+            <p class="eyebrow mb-2">Common questions</p>
+
+            <h2 id="overtime-faq-heading" class="h4 fw-bold mb-3">
+              Overtime pay calculator FAQs
+            </h2>
+
+            <div class="list-group list-group-flush calculation-list">
+
+              <div class="list-group-item px-0 py-4">
+                <h3 class="h6 fw-bold mb-2">
+                  How do I calculate overtime pay?
+                </h3>
+                <p class="text-secondary mb-0">
+                  The calculator multiplies your hourly rate by the number of
+                  overtime hours and the overtime multiplier selected for the
+                  calculation.
+                </p>
+              </div>
+
+              <div class="list-group-item px-0 py-4">
+                <h3 class="h6 fw-bold mb-2">
+                  Is overtime pay the same as my regular hourly rate?
+                </h3>
+                <p class="text-secondary mb-0">
+                  No. Qualifying overtime hours can be subject to an additional
+                  premium. The applicable multiplier depends on the situation being
+                  calculated.
+                </p>
+              </div>
+
+              <div class="list-group-item px-0 py-4">
+                <h3 class="h6 fw-bold mb-2">
+                  Does overtime pay change when I work on a rest day?
+                </h3>
+                <p class="text-secondary mb-0">
+                  The applicable calculation can change depending on the day and
+                  work situation. Select the option that matches the situation you
+                  are trying to estimate.
+                </p>
+              </div>
+
+              <div class="list-group-item px-0 py-4">
+                <h3 class="h6 fw-bold mb-2">
+                  Can I use my hourly rate from the SahodPH calculator?
+                </h3>
+                <p class="text-secondary mb-0">
+                  Yes. You can use an estimated hourly rate as the starting point
+                  for an overtime calculation, provided the rate matches the
+                  assumptions of your calculation.
+                </p>
+              </div>
+
+              <div class="list-group-item px-0 pt-4 pb-0">
+                <h3 class="h6 fw-bold mb-2">
+                  Why is my employer's overtime calculation different?
+                </h3>
+                <p class="text-secondary mb-0">
+                  Actual payroll can depend on your work schedule, holiday or
+                  rest-day status, compensation structure, payroll policies, and
+                  applicable rules. SahodPH provides an estimate rather than an
+                  official payroll determination.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-section border-top py-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+
+            <p class="eyebrow mb-2">More salary tools</p>
+
+            <h2 class="h4 fw-bold mb-3">
+              Related Philippine payroll calculators
+            </h2>
+
+            <p class="text-secondary mb-4">
+              Explore other SahodPH tools for hourly rates, daily rates, holiday
+              pay, night differential, and other salary calculations.
+            </p>
+
+            <nav class="related-links" aria-label="Related payroll calculators">
+              <a href="./">Philippine Salary Calculator</a>
+              <a href="hourly-rate.html">Hourly Rate Calculator</a>
+              <a href="daily-rate.html">Daily Rate Calculator</a>
+              <a href="night-differential.html">Night Differential Calculator</a>
+              <a href="holiday-pay.html">Holiday Pay Calculator</a>
+              <a href="thirteenth-month-pay.html">13th Month Pay Calculator</a>
+              <a href="compare.html">Compare Salaries</a>
+            </nav>
+
           </div>
         </div>
       </div>
