@@ -14,12 +14,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description"
-    content="Calculate estimated Philippine overtime pay from your hourly rate, overtime hours, and applicable pay multiplier.">
+    content="Compute Philippine overtime pay for ordinary days, rest days, special days, regular holidays, and double holidays using the DOLE premium rates (125%, 169%, 260%, and more).">
   <meta name="theme-color" content="#0d6efd">
   <link rel="canonical" href="https://sahodph.online/overtime-pay.html">
   <meta property="og:title" content="Overtime Pay Calculator Philippines | SahodPH">
   <meta property="og:description"
-    content="Estimate Philippine overtime pay from your hourly rate, hours, and pay multiplier.">
+    content="Overtime pay for ordinary days, rest days, and holidays using the DOLE premium rates, with night-shift overtime.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sahodph.online/overtime-pay.html">
   <meta property="og:site_name" content="SahodPH">
@@ -27,9 +27,9 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Overtime Pay Calculator Philippines | SahodPH">
   <meta name="twitter:description"
-    content="Estimate Philippine overtime pay from your hourly rate, hours, and pay multiplier.">
+    content="Overtime pay for ordinary days, rest days, and holidays using the DOLE premium rates, with night-shift overtime.">
   <meta name="twitter:image" content="https://sahodph.online/assets/img/sahodph-main-logo.png">
-  <title>Overtime Pay Calculator Philippines | SahodPH</title>
+  <title>Overtime Pay Calculator Philippines (DOLE Rates) | SahodPH</title>
   <link rel="icon" type="image/png" href="assets/img/sahodph-icon.png">
   <link rel="apple-touch-icon" href="assets/img/sahodph-icon.png">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
@@ -37,26 +37,39 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/style.css">
   <script src="assets/js/calculator-pages.js" defer></script>
-  <script src="assets/js/ad-placeholders.js" defer></script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6021896522356181"
     crossorigin="anonymous"></script>
 </head>
 
 <body class="calculator-page">
   <header class="site-header border-bottom bg-white">
-    <nav class="container py-3 d-flex align-items-center justify-content-between" aria-label="Primary navigation"><a
-        class="navbar-brand" href="./"><img src="assets/img/sahodph-horizontal-logo.png" alt="SahodPH"
-          height="42"></a><a class="btn btn-sm btn-outline-primary" href="./">Salary Calculator</a></nav>
+    <div class="container pt-3 pb-2">
+      <a class="navbar-brand" href="./" aria-label="SahodPH home"><img src="assets/img/sahodph-horizontal-logo.png"
+          alt="SahodPH" height="42"></a>
+    </div>
+    <nav class="site-nav container" aria-label="Primary navigation">
+      <a href="./">Salary</a>
+      <a href="compare.html">Compare</a>
+      <a href="thirteenth-month-pay.html">13th Month</a>
+      <a href="overtime-pay.html" aria-current="page">Overtime</a>
+      <a href="holiday-pay.html">Holiday Pay</a>
+      <a href="night-differential.html">Night Diff</a>
+      <a href="daily-rate.html">Daily Rate</a>
+      <a href="hourly-rate.html">Hourly Rate</a>
+      <a href="rates.html">Deduction Tables</a>
+      <a href="take-home-pay-table.html">Take-Home Table</a>
+    </nav>
   </header>
   <main>
     <section class="hero-section py-5">
       <div class="container">
         <div class="row justify-content-center text-center">
           <div class="col-lg-8">
-            <p class="eyebrow mb-2">Extra hours, clearly estimated</p>
+            <p class="eyebrow mb-2">Labor Code Article 87</p>
             <h1 class="display-5 fw-bold mb-3">Overtime Pay Calculator</h1>
-            <p class="lead text-secondary mb-0">Estimate overtime pay from your hourly rate, hours worked, and the
-              applicable Philippine overtime multiplier.</p>
+            <p class="lead text-secondary mb-0">Work out overtime pay for an ordinary workday, a rest day, a special
+              day, or a regular holiday, using the premium rates in the DOLE Handbook on Workers' Statutory
+              Monetary Benefits.</p>
           </div>
         </div>
       </div>
@@ -69,23 +82,35 @@
               <div class="card-body p-4 p-md-5">
                 <h2 id="calculator-heading" class="h4 fw-bold mb-4">Enter overtime details</h2>
                 <form data-calculator-form data-calculator="overtime">
-                  <div class="mb-3"><label class="form-label fw-semibold" for="hourly-rate">Hourly Rate</label>
+                  <div class="mb-3"><label class="form-label fw-semibold" for="hourly-rate">Basic Hourly Rate</label>
                     <div class="input-group input-group-lg"><span class="input-group-text">₱</span><input
                         class="form-control" id="hourly-rate" name="hourlyRate" type="number" min="0" step="0.01"
-                        value="250" required></div>
+                        value="241.38" inputmode="decimal" required></div>
+                    <div class="form-text">Don't know it? Use the <a href="hourly-rate.html">hourly rate
+                        calculator</a>.</div>
                   </div>
                   <div class="mb-3"><label class="form-label fw-semibold" for="overtime-hours">Overtime Hours</label>
                     <div class="input-group input-group-lg"><input class="form-control" id="overtime-hours"
-                        name="overtimeHours" type="number" min="0" step="0.25" value="2" required><span
-                        class="input-group-text">hours</span></div>
+                        name="overtimeHours" type="number" min="0" step="0.25" value="2" inputmode="decimal"
+                        required><span class="input-group-text">hours</span></div>
+                    <div class="form-text">Only hours worked beyond the first 8 hours of the day.</div>
                   </div>
-                  <div class="mb-4"><label class="form-label fw-semibold" for="overtime-multiplier">Overtime
-                      Rate</label><select class="form-select form-select-lg" id="overtime-multiplier"
+                  <div class="mb-3"><label class="form-label fw-semibold" for="overtime-multiplier">Day the Overtime
+                      Was Worked</label><select class="form-select form-select-lg" id="overtime-multiplier"
                       name="overtimeMultiplier">
-                      <option value="1.25">Ordinary day: 125%</option>
-                      <option value="1.30">Rest day or special day: 130%</option>
-                      <option value="2">Regular holiday: 200%</option>
-                    </select></div><button class="btn btn-primary btn-lg w-100" type="submit">Calculate Overtime Pay
+                      <option value="1.25">Ordinary workday: 125%</option>
+                      <option value="1.69">Rest day: 169%</option>
+                      <option value="1.69">Special non-working day: 169%</option>
+                      <option value="1.95">Special day that is also a rest day: 195%</option>
+                      <option value="2.6">Regular holiday: 260%</option>
+                      <option value="3.38">Regular holiday that is also a rest day: 338%</option>
+                      <option value="3.9">Double holiday: 390%</option>
+                      <option value="5.07">Double holiday that is also a rest day: 507%</option>
+                    </select></div>
+                  <div class="form-check mb-4"><input class="form-check-input" type="checkbox" id="night-shift"
+                      name="nightShift"><label class="form-check-label" for="night-shift">Overtime was between 10 PM
+                      and 6 AM (adds 10% night differential)</label></div>
+                  <button class="btn btn-primary btn-lg w-100" type="submit">Calculate Overtime Pay
                     <span aria-hidden="true">→</span></button>
                 </form>
               </div>
@@ -95,168 +120,137 @@
             <div class="result-card card border-0 shadow-sm h-100" aria-live="polite">
               <div class="card-body p-4 p-md-5">
                 <p class="eyebrow text-white-50 mb-2">Your estimate</p>
-                <h2 class="h4 fw-bold mb-4">Estimated Overtime Pay</h2>
-                <div class="take-home-row border-top pt-4"><span>Estimated amount</span><strong
-                    data-result>₱625.00</strong></div>
-                <p class="small text-white-50 mt-3 mb-0">Your employer may use a different rate for special schedules,
-                  holidays, or collective agreements.</p>
+                <h2 class="h4 fw-bold mb-4">Overtime Pay</h2>
+                <div class="take-home-row border-top pt-4"><span>Overtime pay for these hours</span><strong
+                    data-result>₱603.45</strong></div>
+                <p class="result-note text-white mt-3 mb-2" data-result-note>That is ₱301.73 for each overtime hour.</p>
+                <p class="small text-white-50 mb-0">This amount is paid on top of your regular pay for the first 8
+                  hours. A collective bargaining agreement or company policy may set higher rates.</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="ad-slot mt-4" aria-label="Advertisement">Advertisement</div>
       </div>
     </section>
     <section class="how-section border-top py-5" aria-labelledby="overtime-guide-heading">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-8">
-
             <p class="eyebrow mb-2">Overtime pay guide</p>
+            <h2 id="overtime-guide-heading" class="h3 fw-bold mb-3">How overtime pay works in the Philippines</h2>
+            <p class="text-secondary">Under Article 83 of the Labor Code, normal working hours are capped at
+              <strong>8 hours a day</strong>. Any work beyond those 8 hours is overtime, and Article 87 says it must be
+              paid with a premium on top of the hourly rate:</p>
+            <ul class="text-secondary">
+              <li><strong>On an ordinary workday:</strong> at least 25% more than the regular hourly rate (125%).</li>
+              <li><strong>On a rest day, special day, or holiday:</strong> at least 30% more than the hourly rate
+                <em>for that day</em>. The rate for that day already includes a premium, so the two stack.</li>
+            </ul>
+            <p class="text-secondary">People often get the second rule wrong. Rest-day work is paid at 130% for the
+              first 8 hours. Overtime on that rest day is 130% of <em>that</em> rate, so 1.30 × 1.30 = <strong>169%</strong>
+              of your basic hourly rate, not 130%.</p>
 
-            <h2 id="overtime-guide-heading" class="h3 fw-bold mb-3">
-              How overtime pay is calculated
-            </h2>
-
-            <p class="text-secondary mb-4">
-              Overtime pay is additional compensation for qualifying work performed
-              beyond the employee's regular working hours. The amount can depend on
-              the employee's hourly rate, the number of overtime hours, and the
-              applicable premium for the day or situation.
-            </p>
-
-            <h3 class="h5 fw-bold mt-4 mb-2">
-              Overtime pay formula
-            </h3>
-
-            <div class="bg-light rounded p-4 my-3">
-              <strong>
-                Estimated overtime pay =
-                Hourly rate × overtime hours × applicable multiplier
-              </strong>
+            <div class="formula-box">
+              <strong>Overtime pay = basic hourly rate × overtime hours × overtime multiplier</strong>
             </div>
 
-            <p class="text-secondary">
-              For example, if your hourly rate is <strong>₱250</strong> and you
-              worked <strong>2 overtime hours</strong> using the 125% option:
-            </p>
-
-            <div class="bg-light rounded p-4 mb-4">
-              <strong>
-                ₱250 × 2 × 1.25 = ₱625
-              </strong>
-            </div>
-
-            <p class="text-secondary">
-              The result represents the estimated overtime compensation for the
-              hours entered. It is separate from the employee's regular pay for
-              the normal working hours.
-            </p>
-
-            <h3 class="h5 fw-bold mt-5 mb-3">
-              Overtime situations in this calculator
-            </h3>
-
-            <p class="text-secondary mb-4">
-              The calculator provides different options because overtime treatment
-              can depend on the type of day on which the additional work is
-              performed.
-            </p>
-
+            <h3 class="h5 fw-bold mt-5 mb-3">DOLE overtime and premium rates</h3>
+            <p class="text-secondary">The multipliers below come from the DOLE Handbook on Workers' Statutory Monetary
+              Benefits. The first column is what you earn for the first 8 hours on that type of day. The second
+              column is the rate for each hour after that.</p>
             <div class="table-responsive">
-              <table class="table table-bordered align-middle">
+              <table class="table table-bordered align-middle guide-table">
                 <thead class="table-light">
                   <tr>
-                    <th scope="col">Situation</th>
-                    <th scope="col">Calculator multiplier</th>
+                    <th scope="col">Type of day</th>
+                    <th scope="col" class="text-end">First 8 hours</th>
+                    <th scope="col" class="text-end">Overtime, per hour</th>
+                    <th scope="col" class="text-end">How it's computed</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>Ordinary day</td>
-                    <td>125%</td>
-                  </tr>
-                  <tr>
-                    <td>Rest day or special day</td>
-                    <td>130%</td>
-                  </tr>
-                  <tr>
-                    <td>Regular holiday</td>
-                    <td>200%</td>
-                  </tr>
+                  <tr><td>Ordinary workday</td><td class="text-end">100%</td><td class="text-end">125%</td><td class="text-end">1.00 × 1.25</td></tr>
+                  <tr><td>Rest day</td><td class="text-end">130%</td><td class="text-end">169%</td><td class="text-end">1.30 × 1.30</td></tr>
+                  <tr><td>Special non-working day</td><td class="text-end">130%</td><td class="text-end">169%</td><td class="text-end">1.30 × 1.30</td></tr>
+                  <tr><td>Special day falling on a rest day</td><td class="text-end">150%</td><td class="text-end">195%</td><td class="text-end">1.50 × 1.30</td></tr>
+                  <tr><td>Regular holiday</td><td class="text-end">200%</td><td class="text-end">260%</td><td class="text-end">2.00 × 1.30</td></tr>
+                  <tr><td>Regular holiday falling on a rest day</td><td class="text-end">260%</td><td class="text-end">338%</td><td class="text-end">2.60 × 1.30</td></tr>
+                  <tr><td>Double holiday (two regular holidays on one day)</td><td class="text-end">300%</td><td class="text-end">390%</td><td class="text-end">3.00 × 1.30</td></tr>
+                  <tr><td>Double holiday falling on a rest day</td><td class="text-end">390%</td><td class="text-end">507%</td><td class="text-end">3.90 × 1.30</td></tr>
                 </tbody>
               </table>
             </div>
+            <p class="small text-secondary">For the first-8-hour rates and when holiday pay applies, see the
+              <a href="holiday-pay.html">holiday pay calculator</a>.</p>
 
-            <p class="small text-secondary">
-              These are the options currently implemented in the SahodPH calculator.
-              The applicable rate for a particular employee can depend on the day,
-              work schedule, holiday classification, employment arrangement, and
-              applicable labor rules.
-            </p>
+            <h3 class="h5 fw-bold mt-5 mb-3">Worked examples</h3>
+            <p class="text-secondary">Take an employee with a monthly basic salary of ₱42,000 on a Monday-to-Friday
+              schedule. Their daily rate is ₱42,000 × 12 ÷ 261 = ₱1,931.03, and their basic hourly rate is ₱1,931.03 ÷ 8
+              = <strong>₱241.38</strong>.</p>
+            <div class="table-responsive">
+              <table class="table table-bordered align-middle guide-table">
+                <thead class="table-light">
+                  <tr>
+                    <th scope="col">Scenario</th>
+                    <th scope="col" class="text-end">Computation</th>
+                    <th scope="col" class="text-end">Overtime pay</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>2 hours overtime on a Wednesday</td><td class="text-end">₱241.38 × 2 × 1.25</td><td class="text-end">₱603.45</td></tr>
+                  <tr><td>3 hours overtime on a Saturday rest day</td><td class="text-end">₱241.38 × 3 × 1.69</td><td class="text-end">₱1,223.80</td></tr>
+                  <tr><td>2 hours overtime on a regular holiday</td><td class="text-end">₱241.38 × 2 × 2.60</td><td class="text-end">₱1,255.18</td></tr>
+                  <tr><td>2 hours overtime on an ordinary day, from 10 PM to midnight</td><td class="text-end">₱241.38 × 2 × 1.25 × 1.10</td><td class="text-end">₱663.80</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="text-secondary">In every case, this is paid <em>in addition to</em> the pay for the first 8
+              hours of that day. For the Saturday example, the employee also earns 8 × ₱241.38 × 1.30 = ₱2,510.35 for
+              the regular rest-day hours.</p>
 
-            <h3 class="h5 fw-bold mt-5 mb-2">
-              Why your overtime pay may be different
-            </h3>
+            <h3 class="h5 fw-bold mt-5 mb-2">Overtime at night</h3>
+            <p class="text-secondary">If overtime falls between 10:00 PM and 6:00 AM, Article 86 adds a night shift
+              differential of at least 10% of the hourly rate for that time. For ordinary-day overtime, that makes
+              125% × 110% = 137.5% of the basic hourly rate. Tick the night-shift box in the calculator to apply it to
+              any type of day.</p>
 
-            <p class="text-secondary">
-              The calculator provides a simplified estimate based on the hourly rate,
-              overtime hours, and multiplier you select. Actual payroll can involve
-              additional factors that are not represented by this tool.
-            </p>
-
-            <p class="text-secondary mb-3">
-              Differences can result from factors such as:
-            </p>
-
+            <h3 class="h5 fw-bold mt-5 mb-2">Rules that affect whether you get overtime pay</h3>
             <ul class="text-secondary">
-              <li>The employee's regular work schedule</li>
-              <li>The classification of the day worked</li>
-              <li>Holiday or rest-day status</li>
-              <li>Applicable company payroll policies</li>
-              <li>Other compensation or payroll adjustments</li>
+              <li><strong>Undertime does not cancel overtime.</strong> Article 88 bars employers from offsetting
+                undertime on one day with overtime on another.</li>
+              <li><strong>Overtime is usually authorized.</strong> Most companies require written approval before
+                overtime. Article 89 lists emergencies where an employer can require it.</li>
+              <li><strong>Not everyone is covered.</strong> Article 82 excludes government employees, managerial
+                employees and officers or members of the managerial staff, field personnel whose hours can't be
+                determined with reasonable certainty, family members who depend on the employer, domestic workers,
+                and workers paid by results.</li>
+              <li><strong>Compressed workweeks are different.</strong> Under an approved compressed workweek
+                arrangement, hours beyond 8 on a scheduled day may not count as overtime, as long as the agreed
+                weekly hours are not exceeded.</li>
             </ul>
 
-            <h3 class="h5 fw-bold mt-5 mb-2">
-              Overtime pay is different from your regular hourly pay
-            </h3>
+            <h3 class="h5 fw-bold mt-5 mb-2">Why your payslip may show a different amount</h3>
+            <p class="text-secondary">If your figure doesn't match your payslip, the hourly rate is usually the
+              reason. A company that divides monthly pay by 313 days (a six-day week) gets a lower hourly rate than
+              one that uses 261 days (a five-day week). Other common causes:</p>
+            <ul class="text-secondary mb-0">
+              <li>A collective bargaining agreement or company policy pays more than the legal minimum.</li>
+              <li>Overtime minutes are rounded to the nearest 15 or 30 minutes.</li>
+              <li>The day is classified differently than you assumed. For example, a holiday that falls on your rest
+                day is paid at the higher combined rate.</li>
+            </ul>
 
-            <p class="text-secondary">
-              Your regular hourly rate represents your normal compensation for each
-              regular working hour. Overtime pay applies an additional premium to
-              qualifying hours worked beyond the regular schedule.
-            </p>
-
-            <p class="text-secondary">
-              For this reason, you should not assume that every additional hour is
-              automatically paid at the same rate as a regular working hour.
-            </p>
-
-            <h3 class="h5 fw-bold mt-5 mb-2">
-              What this calculator does not determine
-            </h3>
-
-            <p class="text-secondary">
-              This calculator does not determine whether particular work qualifies
-              as overtime or which legal rate applies to a specific employment
-              situation. It estimates the amount based on the inputs and multiplier
-              selected by the user.
-            </p>
-
-            <p class="text-secondary">
-              If you are checking an actual payslip or overtime dispute, compare the
-              result with your employment contract, company payroll policy, and the
-              applicable official labor guidance.
-            </p>
-
-            <p class="small text-secondary mt-4 mb-0">
-              <strong>Disclaimer:</strong>
-              This calculator provides an estimate for informational and planning
-              purposes only. Actual overtime pay may vary depending on your
-              employment situation, work schedule, holiday or rest-day status,
-              payroll policies, and applicable government rules.
-            </p>
-
+            <aside class="source-box">
+              <h2 class="h6 fw-bold mb-2">Sources and review</h2>
+              <ul class="small text-secondary">
+                <li>Labor Code of the Philippines, Articles 82 to 89, 93 and 94 (<a
+                    href="https://lawphil.net/statutes/presdecs/pd1974/pd_442_1974.html" target="_blank"
+                    rel="noopener">full text on Lawphil</a>)</li>
+                <li>DOLE Bureau of Working Conditions, Handbook on Workers' Statutory Monetary Benefits</li>
+              </ul>
+              <p class="small text-secondary mb-0">Last reviewed 24 September 2026. <a href="updates.html">See what
+                  changed</a> · <a href="contact.html">Report an error</a></p>
+            </aside>
           </div>
         </div>
       </div>
@@ -265,116 +259,100 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-8">
-
             <p class="eyebrow mb-2">Common questions</p>
-
-            <h2 id="overtime-faq-heading" class="h4 fw-bold mb-3">
-              Overtime pay calculator FAQs
-            </h2>
-
+            <h2 id="overtime-faq-heading" class="h4 fw-bold mb-3">Overtime pay FAQs</h2>
             <div class="list-group list-group-flush calculation-list">
-
               <div class="list-group-item px-0 py-4">
-                <h3 class="h6 fw-bold mb-2">
-                  How do I calculate overtime pay?
-                </h3>
-                <p class="text-secondary mb-0">
-                  The calculator multiplies your hourly rate by the number of
-                  overtime hours and the overtime multiplier selected for the
-                  calculation.
-                </p>
+                <h3 class="h6 fw-bold mb-2">What is the overtime rate on a rest day?</h3>
+                <p class="text-secondary mb-0">169% of your basic hourly rate. Rest-day work earns 130% for the first 8
+                  hours, and overtime adds another 30% to that rate: 1.30 × 1.30 = 1.69.</p>
               </div>
-
               <div class="list-group-item px-0 py-4">
-                <h3 class="h6 fw-bold mb-2">
-                  Is overtime pay the same as my regular hourly rate?
-                </h3>
-                <p class="text-secondary mb-0">
-                  No. Qualifying overtime hours can be subject to an additional
-                  premium. The applicable multiplier depends on the situation being
-                  calculated.
-                </p>
+                <h3 class="h6 fw-bold mb-2">What is the overtime rate on a regular holiday?</h3>
+                <p class="text-secondary mb-0">260% of your basic hourly rate. The first 8 hours on a regular holiday
+                  are paid at 200%, and overtime is 200% × 130% = 260%.</p>
               </div>
-
               <div class="list-group-item px-0 py-4">
-                <h3 class="h6 fw-bold mb-2">
-                  Does overtime pay change when I work on a rest day?
-                </h3>
-                <p class="text-secondary mb-0">
-                  The applicable calculation can change depending on the day and
-                  work situation. Select the option that matches the situation you
-                  are trying to estimate.
-                </p>
+                <h3 class="h6 fw-bold mb-2">Is overtime pay taxable?</h3>
+                <p class="text-secondary mb-0">For most employees, yes. It is added to your taxable compensation for the
+                  month. Minimum wage earners are the exception: their overtime pay, holiday pay, and night
+                  differential are exempt from income tax.</p>
               </div>
-
               <div class="list-group-item px-0 py-4">
-                <h3 class="h6 fw-bold mb-2">
-                  Can I use my hourly rate from the SahodPH calculator?
-                </h3>
-                <p class="text-secondary mb-0">
-                  Yes. You can use an estimated hourly rate as the starting point
-                  for an overtime calculation, provided the rate matches the
-                  assumptions of your calculation.
-                </p>
+                <h3 class="h6 fw-bold mb-2">Do managers get overtime pay?</h3>
+                <p class="text-secondary mb-0">Managerial employees and officers or members of the managerial staff
+                  are excluded from the Labor Code's hours-of-work rules, so overtime pay isn't required by law. Some
+                  employers still pay it by policy.</p>
               </div>
-
               <div class="list-group-item px-0 pt-4 pb-0">
-                <h3 class="h6 fw-bold mb-2">
-                  Why is my employer's overtime calculation different?
-                </h3>
-                <p class="text-secondary mb-0">
-                  Actual payroll can depend on your work schedule, holiday or
-                  rest-day status, compensation structure, payroll policies, and
-                  applicable rules. SahodPH provides an estimate rather than an
-                  official payroll determination.
-                </p>
+                <h3 class="h6 fw-bold mb-2">Can my employer offset my overtime with undertime?</h3>
+                <p class="text-secondary mb-0">No. Article 88 says undertime on one day cannot be offset by overtime on
+                  any other day, and permission to go on leave doesn't exempt the employer from paying overtime.</p>
               </div>
-
             </div>
-
           </div>
         </div>
       </div>
     </section>
-
-    <section class="info-section border-top py-5">
+    <section class="info-section border-top py-5" aria-labelledby="related-heading">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-8">
-
-            <p class="eyebrow mb-2">More salary tools</p>
-
-            <h2 class="h4 fw-bold mb-3">
-              Related Philippine payroll calculators
-            </h2>
-
-            <p class="text-secondary mb-4">
-              Explore other SahodPH tools for hourly rates, daily rates, holiday
-              pay, night differential, and other salary calculations.
-            </p>
-
+            <h2 id="related-heading" class="h5 fw-bold mb-3">Related calculators</h2>
             <nav class="related-links" aria-label="Related payroll calculators">
-              <a href="./">Philippine Salary Calculator</a>
               <a href="hourly-rate.html">Hourly Rate Calculator</a>
-              <a href="daily-rate.html">Daily Rate Calculator</a>
-              <a href="night-differential.html">Night Differential Calculator</a>
               <a href="holiday-pay.html">Holiday Pay Calculator</a>
-              <a href="thirteenth-month-pay.html">13th Month Pay Calculator</a>
-              <a href="compare.html">Compare Salaries</a>
+              <a href="night-differential.html">Night Differential Calculator</a>
+              <a href="./">Take-Home Pay Calculator</a>
             </nav>
-
           </div>
         </div>
       </div>
     </section>
   </main>
-  <footer class="border-top bg-white py-4">
+  <footer class="site-footer border-top bg-white py-5">
     <div class="container">
-      <nav class="related-links small" aria-label="Footer navigation"><a href="./">Salary calculator</a><a
-          href="compare.html">Compare salaries</a><a href="about.html">About</a><a href="privacy-policy.html">Privacy
-          Policy</a><a href="terms-of-use.html">Terms of Use</a><a href="disclaimer.html">Disclaimer</a><a
-          href="contact.html">Contact</a></nav>
-      <p class="small text-secondary mb-0 mt-3">© 2026 SahodPH. Independent informational calculator website.</p>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <a href="./" aria-label="SahodPH home"><img src="assets/img/sahodph-horizontal-logo.png" alt="SahodPH"
+              height="34"></a>
+          <p class="small text-secondary mt-3 mb-0">Free Philippine payroll calculators and guides based on the Labor
+            Code, BIR withholding tax tables, and the official SSS, PhilHealth, and Pag-IBIG contribution schedules.</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <h2 class="footer-heading">Calculators</h2>
+          <ul class="footer-links">
+            <li><a href="./">Salary calculator</a></li>
+            <li><a href="compare.html">Compare salaries</a></li>
+            <li><a href="thirteenth-month-pay.html">13th month pay</a></li>
+            <li><a href="overtime-pay.html">Overtime pay</a></li>
+            <li><a href="holiday-pay.html">Holiday pay</a></li>
+            <li><a href="night-differential.html">Night differential</a></li>
+            <li><a href="daily-rate.html">Daily rate</a></li>
+            <li><a href="hourly-rate.html">Hourly rate</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-2">
+          <h2 class="footer-heading">Guides</h2>
+          <ul class="footer-links">
+            <li><a href="rates.html">Deduction tables</a></li>
+            <li><a href="take-home-pay-table.html">Take-home pay table</a></li>
+            <li><a href="updates.html">Site updates</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3">
+          <h2 class="footer-heading">SahodPH</h2>
+          <ul class="footer-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-of-use.html">Terms of Use</a></li>
+            <li><a href="disclaimer.html">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="small text-secondary border-top pt-3 mt-4 mb-0">© 2026 SahodPH. Independent website, not affiliated
+        with SSS, PhilHealth, Pag-IBIG, BIR, or DOLE. Rates and rules last reviewed 24 September 2026.</p>
     </div>
   </footer>
 </body>

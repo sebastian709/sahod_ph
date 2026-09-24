@@ -14,12 +14,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description"
-    content="Calculate estimated Philippine night differential pay from your hourly rate, night hours, and night differential rate.">
+    content="Compute night shift differential in the Philippines: at least 10% of your hourly rate for work between 10 PM and 6 AM, including rest days, holidays, and night overtime.">
   <meta name="theme-color" content="#0d6efd">
   <link rel="canonical" href="https://sahodph.online/night-differential.html">
   <meta property="og:title" content="Night Differential Calculator Philippines | SahodPH">
   <meta property="og:description"
-    content="Estimate Philippine night differential pay from your hourly rate and night hours.">
+    content="Night shift differential for work between 10 PM and 6 AM, including rest days and holidays.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sahodph.online/night-differential.html">
   <meta property="og:site_name" content="SahodPH">
@@ -27,9 +27,9 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Night Differential Calculator Philippines | SahodPH">
   <meta name="twitter:description"
-    content="Estimate Philippine night differential pay from your hourly rate and night hours.">
+    content="Night shift differential for work between 10 PM and 6 AM, including rest days and holidays.">
   <meta name="twitter:image" content="https://sahodph.online/assets/img/sahodph-main-logo.png">
-  <title>Night Differential Calculator Philippines | SahodPH</title>
+  <title>Night Differential Calculator Philippines (10 PM to 6 AM) | SahodPH</title>
   <link rel="icon" type="image/png" href="assets/img/sahodph-icon.png">
   <link rel="apple-touch-icon" href="assets/img/sahodph-icon.png">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
@@ -37,26 +37,38 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/style.css">
   <script src="assets/js/calculator-pages.js" defer></script>
-  <script src="assets/js/ad-placeholders.js" defer></script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6021896522356181"
     crossorigin="anonymous"></script>
 </head>
 
 <body class="calculator-page">
   <header class="site-header border-bottom bg-white">
-    <nav class="container py-3 d-flex align-items-center justify-content-between" aria-label="Primary navigation"><a
-        class="navbar-brand" href="./"><img src="assets/img/sahodph-horizontal-logo.png" alt="SahodPH"
-          height="42"></a><a class="btn btn-sm btn-outline-primary" href="./">Salary Calculator</a></nav>
+    <div class="container pt-3 pb-2">
+      <a class="navbar-brand" href="./" aria-label="SahodPH home"><img src="assets/img/sahodph-horizontal-logo.png"
+          alt="SahodPH" height="42"></a>
+    </div>
+    <nav class="site-nav container" aria-label="Primary navigation">
+      <a href="./">Salary</a>
+      <a href="compare.html">Compare</a>
+      <a href="thirteenth-month-pay.html">13th Month</a>
+      <a href="overtime-pay.html">Overtime</a>
+      <a href="holiday-pay.html">Holiday Pay</a>
+      <a href="night-differential.html" aria-current="page">Night Diff</a>
+      <a href="daily-rate.html">Daily Rate</a>
+      <a href="hourly-rate.html">Hourly Rate</a>
+      <a href="rates.html">Deduction Tables</a>
+      <a href="take-home-pay-table.html">Take-Home Table</a>
+    </nav>
   </header>
   <main>
     <section class="hero-section py-5">
       <div class="container">
         <div class="row justify-content-center text-center">
           <div class="col-lg-8">
-            <p class="eyebrow mb-2">Work hours after dark</p>
+            <p class="eyebrow mb-2">Labor Code Article 86</p>
             <h1 class="display-5 fw-bold mb-3">Night Differential Calculator</h1>
-            <p class="lead text-secondary mb-0">Estimate night differential pay from your hourly rate and hours worked
-              during the night shift.</p>
+            <p class="lead text-secondary mb-0">Work out the night shift differential for hours worked between
+              10:00 PM and 6:00 AM, on ordinary days, rest days, or holidays.</p>
           </div>
         </div>
       </div>
@@ -69,22 +81,35 @@
               <div class="card-body p-4 p-md-5">
                 <h2 id="calculator-heading" class="h4 fw-bold mb-4">Enter night shift details</h2>
                 <form data-calculator-form data-calculator="night-differential">
-                  <div class="mb-3"><label class="form-label fw-semibold" for="hourly-rate">Hourly Rate</label>
+                  <div class="mb-3"><label class="form-label fw-semibold" for="hourly-rate">Basic Hourly Rate</label>
                     <div class="input-group input-group-lg"><span class="input-group-text">₱</span><input
                         class="form-control" id="hourly-rate" name="hourlyRate" type="number" min="0" step="0.01"
-                        value="201.92" required></div>
+                        value="241.38" inputmode="decimal" required></div>
                   </div>
-                  <div class="mb-3"><label class="form-label fw-semibold" for="night-hours">Night Hours</label>
+                  <div class="mb-3"><label class="form-label fw-semibold" for="night-hours">Hours Worked Between 10 PM
+                      and 6 AM</label>
                     <div class="input-group input-group-lg"><input class="form-control" id="night-hours"
-                        name="nightHours" type="number" min="0" step="0.25" value="8" required><span
-                        class="input-group-text">hours</span></div>
+                        name="nightHours" type="number" min="0" max="8" step="0.25" value="7" inputmode="decimal"
+                        required><span class="input-group-text">hours</span></div>
+                    <div class="form-text">Leave out unpaid meal breaks that fall inside this window.</div>
                   </div>
+                  <div class="mb-3"><label class="form-label fw-semibold" for="day-multiplier">Type of Day</label>
+                    <select class="form-select form-select-lg" id="day-multiplier" name="dayMultiplier">
+                      <option value="1">Ordinary workday (100%)</option>
+                      <option value="1.3">Rest day or special non-working day (130%)</option>
+                      <option value="1.5">Special day on a rest day (150%)</option>
+                      <option value="2">Regular holiday (200%)</option>
+                      <option value="2.6">Regular holiday on a rest day (260%)</option>
+                      <option value="3">Double holiday (300%)</option>
+                    </select></div>
                   <div class="mb-4"><label class="form-label fw-semibold" for="night-rate">Night Differential
                       Rate</label>
                     <div class="input-group input-group-lg"><input class="form-control" id="night-rate" name="nightRate"
-                        type="number" min="0" step="0.01" value="0.10" required><span
-                        class="input-group-text">10%</span></div>
-                  </div><button class="btn btn-primary btn-lg w-100" type="submit">Calculate Night Differential <span
+                        type="number" min="0" max="100" step="0.5" value="10" inputmode="decimal" required><span
+                        class="input-group-text">%</span></div>
+                    <div class="form-text">The legal minimum is 10%. Change it if your employer pays more.</div>
+                  </div>
+                  <button class="btn btn-primary btn-lg w-100" type="submit">Calculate Night Differential <span
                       aria-hidden="true">→</span></button>
                 </form>
               </div>
@@ -94,296 +119,195 @@
             <div class="result-card card border-0 shadow-sm h-100" aria-live="polite">
               <div class="card-body p-4 p-md-5">
                 <p class="eyebrow text-white-50 mb-2">Your estimate</p>
-                <h2 class="h4 fw-bold mb-4">Estimated Night Differential</h2>
-                <div class="take-home-row border-top pt-4"><span>Estimated amount</span><strong
-                    data-result>₱161.54</strong></div>
-                <p class="small text-white-50 mt-3 mb-0">The standard estimate uses a 10% premium for qualifying night
-                  work.</p>
+                <h2 class="h4 fw-bold mb-4">Night Differential</h2>
+                <div class="take-home-row border-top pt-4"><span>Night differential</span><strong
+                    data-result>₱168.97</strong></div>
+                <p class="result-note text-white mt-3 mb-2" data-result-note>Total pay for these hours including the
+                  differential: ₱1,858.63.</p>
+                <p class="small text-white-50 mb-0">For overtime hours worked at night, use the night-shift option in
+                  the <a class="link-light" href="overtime-pay.html">overtime calculator</a> instead.</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="ad-slot mt-4" aria-label="Advertisement">Advertisement</div>
       </div>
     </section>
-    <section class="how-section border-top py-5" aria-labelledby="night-differential-guide-heading">
+    <section class="how-section border-top py-5" aria-labelledby="night-guide-heading">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-8">
-
             <p class="eyebrow mb-2">Night shift pay guide</p>
+            <h2 id="night-guide-heading" class="h3 fw-bold mb-3">How night differential works in the Philippines</h2>
+            <p class="text-secondary">Article 86 of the Labor Code gives covered employees a night shift
+              differential of <strong>at least 10% of their regular wage for each hour worked between 10:00 PM and
+              6:00 AM</strong>. It's added on top of the normal pay for those hours.</p>
 
-            <h2 id="night-differential-guide-heading" class="h3 fw-bold mb-3">
-              How night differential is calculated
-            </h2>
-
-            <p class="text-secondary mb-4">
-              Night differential is an additional amount paid for qualifying work
-              performed during designated night hours. SahodPH lets you enter your
-              hourly rate, the number of qualifying night hours, and the applicable
-              premium rate to estimate the additional amount.
-            </p>
-
-            <h3 class="h5 fw-bold mt-4 mb-2">
-              Night differential formula
-            </h3>
-
-            <div class="bg-light rounded p-4 my-3">
-              <strong>
-                Estimated night differential =
-                Hourly rate × qualifying night hours × differential rate
-              </strong>
+            <div class="formula-box">
+              <strong>Night differential = basic hourly rate × day multiplier × night hours × 10%</strong>
             </div>
 
-            <p class="text-secondary">
-              For example, if your hourly rate is <strong>₱201.92</strong>, you work
-              <strong>8 qualifying night hours</strong>, and the selected
-              differential rate is <strong>10%</strong>:
-            </p>
+            <p class="text-secondary">The day multiplier matters because the 10% is based on your pay rate
+              <em>for that day</em>. On a rest day, your hourly rate is 130%, so the differential is 10% of 130%, or
+              13% of your basic hourly rate. On a regular holiday it's 10% of 200%, or 20%.</p>
 
-            <div class="bg-light rounded p-4 mb-4">
-              <strong>
-                ₱201.92 × 8 × 10% = ₱161.54
-              </strong>
-            </div>
-
-            <p class="text-secondary">
-              The result represents the estimated additional night differential,
-              rather than your total pay for the hours worked.
-            </p>
-
-            <h3 class="h5 fw-bold mt-5 mb-2">
-              What does the 10% rate mean?
-            </h3>
-
-            <p class="text-secondary">
-              The calculator uses a 10% night differential rate as its standard
-              estimate. This means the additional amount is calculated as 10% of
-              the hourly rate for the qualifying hours entered.
-            </p>
-
-            <p class="text-secondary">
-              The applicable rate and qualifying hours can depend on the employee's
-              situation and the rules that apply to the work being performed.
-              Always verify important payroll figures against the applicable
-              employment and labor rules.
-            </p>
-
-            <h3 class="h5 fw-bold mt-5 mb-2">
-              What is included in the calculation?
-            </h3>
-
-            <p class="text-secondary mb-3">
-              The calculator uses three inputs:
-            </p>
-
-            <ul class="text-secondary">
-              <li>Your hourly rate</li>
-              <li>The number of qualifying night hours</li>
-              <li>The night differential rate</li>
-            </ul>
-
-            <p class="text-secondary">
-              These values are multiplied together to estimate the additional
-              night differential for the hours entered.
-            </p>
-
-            <h3 class="h5 fw-bold mt-5 mb-2">
-              Night differential is not the same as your total night-shift pay
-            </h3>
-
-            <p class="text-secondary">
-              The night differential is an additional premium. It does not represent
-              the entire amount you earned for working those hours.
-            </p>
-
-            <p class="text-secondary">
-              For example, with an hourly rate of ₱201.92 and 8 qualifying hours,
-              the regular pay for those hours would be based on the hourly rate,
-              while the night differential represents the additional premium
-              calculated by this tool.
-            </p>
-
-            <div class="table-responsive my-4">
-              <table class="table table-bordered align-middle">
+            <h3 class="h5 fw-bold mt-5 mb-3">Night shift pay rates by type of day</h3>
+            <div class="table-responsive">
+              <table class="table table-bordered align-middle guide-table">
                 <thead class="table-light">
                   <tr>
-                    <th scope="col">Input</th>
-                    <th scope="col">Example</th>
+                    <th scope="col">Type of day</th>
+                    <th scope="col" class="text-end">Hourly rate for the day</th>
+                    <th scope="col" class="text-end">With night differential</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>Hourly rate</td>
-                    <td>₱201.92</td>
-                  </tr>
-                  <tr>
-                    <td>Qualifying night hours</td>
-                    <td>8 hours</td>
-                  </tr>
-                  <tr>
-                    <td>Differential rate</td>
-                    <td>10%</td>
-                  </tr>
-                  <tr>
-                    <td><strong>Estimated night differential</strong></td>
-                    <td><strong>₱161.54</strong></td>
-                  </tr>
+                  <tr><td>Ordinary workday</td><td class="text-end">100%</td><td class="text-end">110%</td></tr>
+                  <tr><td>Rest day or special non-working day</td><td class="text-end">130%</td><td class="text-end">143%</td></tr>
+                  <tr><td>Special day on a rest day</td><td class="text-end">150%</td><td class="text-end">165%</td></tr>
+                  <tr><td>Regular holiday</td><td class="text-end">200%</td><td class="text-end">220%</td></tr>
+                  <tr><td>Regular holiday on a rest day</td><td class="text-end">260%</td><td class="text-end">286%</td></tr>
+                  <tr><td>Double holiday</td><td class="text-end">300%</td><td class="text-end">330%</td></tr>
+                  <tr><td>Overtime on an ordinary workday, at night</td><td class="text-end">125%</td><td class="text-end">137.5%</td></tr>
                 </tbody>
               </table>
             </div>
 
-            <h3 class="h5 fw-bold mt-5 mb-2">
-              Why your actual night differential may be different
-            </h3>
+            <h3 class="h5 fw-bold mt-5 mb-2">Worked example: a 10 PM to 7 AM shift</h3>
+            <p class="text-secondary">Say you work 10:00 PM to 7:00 AM with an unpaid one-hour meal break from 2:00 to
+              3:00 AM, and your basic hourly rate is ₱241.38.</p>
+            <ul class="text-secondary">
+              <li>Hours worked: 9 hours on site − 1 hour break = <strong>8 hours</strong> (no overtime).</li>
+              <li>Hours inside the 10 PM to 6 AM window: 8 hours − 1 hour break = <strong>7 night hours</strong>.
+                The 6:00 to 7:00 AM hour is outside the window.</li>
+              <li>Night differential: ₱241.38 × 7 × 10% = <strong>₱168.97</strong>.</li>
+              <li>Pay for the night: (₱241.38 × 8) + ₱168.97 = <strong>₱2,100.01</strong>.</li>
+            </ul>
+            <p class="text-secondary">If the same shift fell on a regular holiday, the differential would be ₱241.38 ×
+              2.00 × 7 × 10% = ₱337.93.</p>
 
-            <p class="text-secondary">
-              Actual payroll can depend on your employment arrangement, qualifying
-              work hours, compensation structure, applicable premium rates,
-              employer payroll policies, and other circumstances that are not
-              represented by this simplified calculator.
-            </p>
+            <h3 class="h5 fw-bold mt-5 mb-2">Who is entitled to night differential</h3>
+            <p class="text-secondary">Most private-sector employees who work between 10 PM and 6 AM qualify. The
+              Labor Code's implementing rules exclude:</p>
+            <ul class="text-secondary">
+              <li>Government employees and employees of government-owned or controlled corporations</li>
+              <li>Retail and service establishments that regularly employ no more than five workers</li>
+              <li>Managerial employees and officers or members of the managerial staff</li>
+              <li>Field personnel, domestic workers, and workers paid by results</li>
+            </ul>
+            <p class="text-secondary">Many BPO and healthcare employers pay more than 10% by company policy. If your
+              contract says 15% or 20%, enter that rate in the calculator.</p>
 
-            <p class="text-secondary">
-              If you are checking an actual payslip, use your employer's payroll
-              records and the applicable official labor guidance as the final
-              reference.
-            </p>
+            <h3 class="h5 fw-bold mt-5 mb-2">Is night differential taxable?</h3>
+            <p class="text-secondary mb-0">For most employees, yes. It's part of taxable compensation. Minimum wage
+              earners are exempt from income tax on their night differential, along with their holiday pay, overtime
+              pay, and hazard pay.</p>
 
-            <h3 class="h5 fw-bold mt-5 mb-2">
-              What this calculator does not determine
-            </h3>
-
-            <p class="text-secondary">
-              This tool does not determine whether a particular hour qualifies for
-              night differential or whether a particular employee is legally
-              entitled to the premium. It provides an estimate based on the inputs
-              you enter.
-            </p>
-
-            <p class="small text-secondary mt-4 mb-0">
-              <strong>Disclaimer:</strong>
-              This calculator provides an estimate for informational and planning
-              purposes only. Actual night differential may vary depending on your
-              employment situation, qualifying hours, payroll policies, applicable
-              premium rates, and government rules.
-            </p>
-
+            <aside class="source-box">
+              <h2 class="h6 fw-bold mb-2">Sources and review</h2>
+              <ul class="small text-secondary">
+                <li>Labor Code of the Philippines, Articles 82 and 86 (<a
+                    href="https://lawphil.net/statutes/presdecs/pd1974/pd_442_1974.html" target="_blank"
+                    rel="noopener">full text on Lawphil</a>), and Book III, Rule II of the implementing rules</li>
+                <li>DOLE Bureau of Working Conditions, Handbook on Workers' Statutory Monetary Benefits</li>
+              </ul>
+              <p class="small text-secondary mb-0">Last reviewed 24 September 2026. <a href="updates.html">See what
+                  changed</a> · <a href="contact.html">Report an error</a></p>
+            </aside>
           </div>
         </div>
       </div>
     </section>
-    <section class="info-section border-top py-5" aria-labelledby="night-differential-faq-heading">
+    <section class="info-section border-top py-5" aria-labelledby="night-faq-heading">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-8">
-
             <p class="eyebrow mb-2">Common questions</p>
-
-            <h2 id="night-differential-faq-heading" class="h4 fw-bold mb-3">
-              Night differential calculator FAQs
-            </h2>
-
+            <h2 id="night-faq-heading" class="h4 fw-bold mb-3">Night differential FAQs</h2>
             <div class="list-group list-group-flush calculation-list">
-
               <div class="list-group-item px-0 py-4">
-                <h3 class="h6 fw-bold mb-2">
-                  How is night differential calculated?
-                </h3>
-                <p class="text-secondary mb-0">
-                  This calculator multiplies the hourly rate by the number of
-                  qualifying night hours and the selected differential rate.
-                </p>
+                <h3 class="h6 fw-bold mb-2">What hours count for night differential?</h3>
+                <p class="text-secondary mb-0">Only hours actually worked between 10:00 PM and 6:00 AM. A shift from
+                  6:00 PM to 3:00 AM earns night differential for the 10 PM to 3 AM part only.</p>
               </div>
-
               <div class="list-group-item px-0 py-4">
-                <h3 class="h6 fw-bold mb-2">
-                  What rate does this calculator use?
-                </h3>
-                <p class="text-secondary mb-0">
-                  The default rate in the calculator is 10%. You can change the
-                  rate in the input field when your calculation requires a
-                  different assumption.
-                </p>
+                <h3 class="h6 fw-bold mb-2">Is the 10% based on my basic rate or my holiday rate?</h3>
+                <p class="text-secondary mb-0">It's based on the rate for that day. On a regular holiday, 10% of the
+                  200% holiday rate means an extra 20% of your basic hourly rate.</p>
               </div>
-
               <div class="list-group-item px-0 py-4">
-                <h3 class="h6 fw-bold mb-2">
-                  Is night differential my total salary for the night shift?
-                </h3>
-                <p class="text-secondary mb-0">
-                  No. The result represents the estimated additional night
-                  differential. Your regular pay for the hours worked is separate.
-                </p>
+                <h3 class="h6 fw-bold mb-2">Does my meal break count?</h3>
+                <p class="text-secondary mb-0">An unpaid meal break of at least 60 minutes isn't hours worked, so it
+                  doesn't earn night differential. A short paid break (5 to 20 minutes) counts as hours worked.</p>
               </div>
-
-              <div class="list-group-item px-0 py-4">
-                <h3 class="h6 fw-bold mb-2">
-                  Can I use my hourly rate from the SahodPH calculator?
-                </h3>
-                <p class="text-secondary mb-0">
-                  Yes. An estimated hourly rate can be used as an input, provided
-                  that the rate and assumptions match the calculation you are
-                  trying to make.
-                </p>
-              </div>
-
               <div class="list-group-item px-0 pt-4 pb-0">
-                <h3 class="h6 fw-bold mb-2">
-                  Why is my employer's calculation different?
-                </h3>
-                <p class="text-secondary mb-0">
-                  Payroll calculations can depend on the employee's work schedule,
-                  compensation structure, qualifying hours, applicable rules, and
-                  employer payroll practices.
-                </p>
+                <h3 class="h6 fw-bold mb-2">Can my employer pay less than 10%?</h3>
+                <p class="text-secondary mb-0">Not if you're covered by Article 86. The 10% is a minimum, and a
+                  contract or CBA can only set a higher rate.</p>
               </div>
-
             </div>
-
           </div>
         </div>
       </div>
     </section>
-
-    <section class="info-section border-top py-5">
+    <section class="info-section border-top py-5" aria-labelledby="related-heading">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-8">
-
-            <p class="eyebrow mb-2">More salary tools</p>
-
-            <h2 class="h4 fw-bold mb-3">
-              Related Philippine payroll calculators
-            </h2>
-
-            <p class="text-secondary mb-4">
-              Use the other SahodPH calculators to estimate hourly, daily, overtime,
-              holiday, and other workplace pay amounts.
-            </p>
-
+            <h2 id="related-heading" class="h5 fw-bold mb-3">Related calculators</h2>
             <nav class="related-links" aria-label="Related payroll calculators">
-              <a href="./">Philippine Salary Calculator</a>
               <a href="hourly-rate.html">Hourly Rate Calculator</a>
-              <a href="daily-rate.html">Daily Rate Calculator</a>
               <a href="overtime-pay.html">Overtime Pay Calculator</a>
               <a href="holiday-pay.html">Holiday Pay Calculator</a>
-              <a href="thirteenth-month-pay.html">13th Month Pay Calculator</a>
-              <a href="compare.html">Compare Salaries</a>
+              <a href="./">Take-Home Pay Calculator</a>
             </nav>
-
           </div>
         </div>
       </div>
     </section>
   </main>
-  <footer class="border-top bg-white py-4">
+  <footer class="site-footer border-top bg-white py-5">
     <div class="container">
-      <nav class="related-links small" aria-label="Footer navigation"><a href="./">Salary calculator</a><a
-          href="compare.html">Compare salaries</a><a href="about.html">About</a><a href="privacy-policy.html">Privacy
-          Policy</a><a href="terms-of-use.html">Terms of Use</a><a href="disclaimer.html">Disclaimer</a><a
-          href="contact.html">Contact</a></nav>
-      <p class="small text-secondary mb-0 mt-3">© 2026 SahodPH. Independent informational calculator website.</p>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <a href="./" aria-label="SahodPH home"><img src="assets/img/sahodph-horizontal-logo.png" alt="SahodPH"
+              height="34"></a>
+          <p class="small text-secondary mt-3 mb-0">Free Philippine payroll calculators and guides based on the Labor
+            Code, BIR withholding tax tables, and the official SSS, PhilHealth, and Pag-IBIG contribution schedules.</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <h2 class="footer-heading">Calculators</h2>
+          <ul class="footer-links">
+            <li><a href="./">Salary calculator</a></li>
+            <li><a href="compare.html">Compare salaries</a></li>
+            <li><a href="thirteenth-month-pay.html">13th month pay</a></li>
+            <li><a href="overtime-pay.html">Overtime pay</a></li>
+            <li><a href="holiday-pay.html">Holiday pay</a></li>
+            <li><a href="night-differential.html">Night differential</a></li>
+            <li><a href="daily-rate.html">Daily rate</a></li>
+            <li><a href="hourly-rate.html">Hourly rate</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-2">
+          <h2 class="footer-heading">Guides</h2>
+          <ul class="footer-links">
+            <li><a href="rates.html">Deduction tables</a></li>
+            <li><a href="take-home-pay-table.html">Take-home pay table</a></li>
+            <li><a href="updates.html">Site updates</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3">
+          <h2 class="footer-heading">SahodPH</h2>
+          <ul class="footer-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-of-use.html">Terms of Use</a></li>
+            <li><a href="disclaimer.html">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="small text-secondary border-top pt-3 mt-4 mb-0">© 2026 SahodPH. Independent website, not affiliated
+        with SSS, PhilHealth, Pag-IBIG, BIR, or DOLE. Rates and rules last reviewed 24 September 2026.</p>
     </div>
   </footer>
 </body>

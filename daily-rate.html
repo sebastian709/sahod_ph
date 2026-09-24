@@ -14,20 +14,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description"
-    content="Calculate an estimated Philippine daily rate from your monthly salary and number of working days.">
+    content="Convert a monthly salary to a daily rate using the DOLE factor method (261, 313, or 365 days a year), and see which factor fits a 5-day or 6-day work week.">
   <meta name="theme-color" content="#0d6efd">
   <link rel="canonical" href="https://sahodph.online/daily-rate.html">
   <meta property="og:title" content="Daily Rate Calculator Philippines | SahodPH">
-  <meta property="og:description" content="Estimate your Philippine daily salary from monthly pay and working days.">
+  <meta property="og:description"
+    content="Convert a monthly salary to a daily rate using the 261, 313, or 365-day factor.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sahodph.online/daily-rate.html">
   <meta property="og:site_name" content="SahodPH">
   <meta property="og:image" content="https://sahodph.online/assets/img/sahodph-main-logo.png">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Daily Rate Calculator Philippines | SahodPH">
-  <meta name="twitter:description" content="Estimate your Philippine daily salary from monthly pay and working days.">
+  <meta name="twitter:description"
+    content="Convert a monthly salary to a daily rate using the 261, 313, or 365-day factor.">
   <meta name="twitter:image" content="https://sahodph.online/assets/img/sahodph-main-logo.png">
-  <title>Daily Rate Calculator Philippines | SahodPH</title>
+  <title>Daily Rate Calculator Philippines: Monthly to Daily Salary | SahodPH</title>
   <link rel="icon" type="image/png" href="assets/img/sahodph-icon.png">
   <link rel="apple-touch-icon" href="assets/img/sahodph-icon.png">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
@@ -35,26 +37,38 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/style.css">
   <script src="assets/js/calculator-pages.js" defer></script>
-  <script src="assets/js/ad-placeholders.js" defer></script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6021896522356181"
     crossorigin="anonymous"></script>
 </head>
 
 <body class="calculator-page">
   <header class="site-header border-bottom bg-white">
-    <nav class="container py-3 d-flex align-items-center justify-content-between" aria-label="Primary navigation"><a
-        class="navbar-brand" href="./"><img src="assets/img/sahodph-horizontal-logo.png" alt="SahodPH"
-          height="42"></a><a class="btn btn-sm btn-outline-primary" href="./">Salary Calculator</a></nav>
+    <div class="container pt-3 pb-2">
+      <a class="navbar-brand" href="./" aria-label="SahodPH home"><img src="assets/img/sahodph-horizontal-logo.png"
+          alt="SahodPH" height="42"></a>
+    </div>
+    <nav class="site-nav container" aria-label="Primary navigation">
+      <a href="./">Salary</a>
+      <a href="compare.html">Compare</a>
+      <a href="thirteenth-month-pay.html">13th Month</a>
+      <a href="overtime-pay.html">Overtime</a>
+      <a href="holiday-pay.html">Holiday Pay</a>
+      <a href="night-differential.html">Night Diff</a>
+      <a href="daily-rate.html" aria-current="page">Daily Rate</a>
+      <a href="hourly-rate.html">Hourly Rate</a>
+      <a href="rates.html">Deduction Tables</a>
+      <a href="take-home-pay-table.html">Take-Home Table</a>
+    </nav>
   </header>
   <main>
     <section class="hero-section py-5">
       <div class="container">
         <div class="row justify-content-center text-center">
           <div class="col-lg-8">
-            <p class="eyebrow mb-2">Turn monthly pay into a workday rate</p>
+            <p class="eyebrow mb-2">Monthly to daily</p>
             <h1 class="display-5 fw-bold mb-3">Daily Rate Calculator</h1>
-            <p class="lead text-secondary mb-0">Estimate your Philippine daily pay from your monthly salary and working
-              days per month.</p>
+            <p class="lead text-secondary mb-0">Turn a monthly salary into a daily rate using the same annual factors
+              Philippine payroll uses for absences, holiday pay, and premium pay.</p>
           </div>
         </div>
       </div>
@@ -65,19 +79,24 @@
           <div class="col-lg-6">
             <div class="calculator-card card border-0 shadow-sm h-100">
               <div class="card-body p-4 p-md-5">
-                <h2 id="calculator-heading" class="h4 fw-bold mb-4">Enter your details</h2>
+                <h2 id="calculator-heading" class="h4 fw-bold mb-4">Enter salary details</h2>
                 <form data-calculator-form data-calculator="daily-rate">
-                  <div class="mb-3"><label class="form-label fw-semibold" for="monthly-salary">Monthly Salary</label>
+                  <div class="mb-3"><label class="form-label fw-semibold" for="monthly-salary">Monthly Basic
+                      Salary</label>
                     <div class="input-group input-group-lg"><span class="input-group-text">₱</span><input
                         class="form-control" id="monthly-salary" name="monthlySalary" type="number" min="0" step="0.01"
-                        value="42000" required></div>
+                        value="42000" inputmode="decimal" required></div>
                   </div>
-                  <div class="mb-4"><label class="form-label fw-semibold" for="working-days">Working Days Per
-                      Month</label>
-                    <div class="input-group input-group-lg"><input class="form-control" id="working-days"
-                        name="workingDays" type="number" min="1" step="1" value="26" required><span
-                        class="input-group-text">days</span></div>
-                  </div><button class="btn btn-primary btn-lg w-100" type="submit">Calculate Daily Rate <span
+                  <div class="mb-4"><label class="form-label fw-semibold" for="annual-working-days">Work
+                      Schedule</label><select class="form-select form-select-lg" id="annual-working-days"
+                      name="annualWorkingDays">
+                      <option value="261">Monday to Friday (261 days a year)</option>
+                      <option value="313">Monday to Saturday (313 days a year)</option>
+                      <option value="365">Paid every day, including rest days (365)</option>
+                      <option value="264">Company uses 22 days a month (264)</option>
+                      <option value="312">Company uses 26 days a month (312)</option>
+                    </select></div>
+                  <button class="btn btn-primary btn-lg w-100" type="submit">Calculate Daily Rate <span
                       aria-hidden="true">→</span></button>
                 </form>
               </div>
@@ -87,281 +106,195 @@
             <div class="result-card card border-0 shadow-sm h-100" aria-live="polite">
               <div class="card-body p-4 p-md-5">
                 <p class="eyebrow text-white-50 mb-2">Your estimate</p>
-                <h2 class="h4 fw-bold mb-4">Estimated Daily Rate</h2>
-                <div class="take-home-row border-top pt-4"><span>Estimated amount</span><strong
-                    data-result>₱1,615.38</strong></div>
-                <p class="small text-white-50 mt-3 mb-0">Use the working-day count that matches your employment contract
-                  or payroll policy.</p>
+                <h2 class="h4 fw-bold mb-4">Daily Rate</h2>
+                <div class="take-home-row border-top pt-4"><span>Basic daily rate</span><strong
+                    data-result>₱1,931.03</strong></div>
+                <p class="result-note text-white mt-3 mb-2" data-result-note>Hourly equivalent at 8 hours a day:
+                  ₱241.38.</p>
+                <p class="small text-white-50 mb-0">Your contract or payroll policy may name the factor your employer
+                  uses. If it doesn't, the work-schedule options above are the DOLE defaults.</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="ad-slot mt-4" aria-label="Advertisement">Advertisement</div>
       </div>
     </section>
-    <section class="how-section border-top py-5" aria-labelledby="daily-rate-guide-heading">
+    <section class="how-section border-top py-5" aria-labelledby="daily-guide-heading">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-8">
-
-            <p class="eyebrow mb-2">Daily salary guide</p>
-
-            <h2 id="daily-rate-guide-heading" class="h3 fw-bold mb-3">
-              How to calculate your daily rate in the Philippines
+            <p class="eyebrow mb-2">Daily rate guide</p>
+            <h2 id="daily-guide-heading" class="h3 fw-bold mb-3">How to compute your daily rate from a monthly salary
             </h2>
+            <p class="text-secondary">Philippine payroll doesn't divide a monthly salary by the number of days in the
+              month, since that changes every month. It annualizes the salary and divides by a fixed number of paid
+              days a year, called the <strong>factor</strong>:</p>
 
-            <p class="text-secondary mb-4">
-              A daily rate is an estimate of how much your monthly salary represents
-              for each working day. It can be useful when you want to understand your
-              daily earnings, compare compensation, or use a daily amount as part of
-              another payroll calculation.
-            </p>
-
-            <h3 class="h5 fw-bold mt-4 mb-2">
-              Daily rate formula
-            </h3>
-
-            <div class="bg-light rounded p-4 my-3">
-              <strong>Estimated daily rate = Monthly salary ÷ Working days per month</strong>
+            <div class="formula-box">
+              <strong>Daily rate = monthly basic salary × 12 ÷ annual factor</strong>
             </div>
 
-            <p class="text-secondary">
-              For example, if your monthly salary is ₱42,000 and you use 26 working
-              days as the divisor:
-            </p>
+            <p class="text-secondary">The factor counts every day you're paid for in a year. That includes regular
+              holidays, which are paid even when you don't work. It leaves out rest days you aren't paid for.</p>
 
-            <div class="bg-light rounded p-4 mb-4">
-              <strong>₱42,000 ÷ 26 = ₱1,615.38 per day</strong>
-            </div>
-
-            <p class="text-secondary">
-              The calculator lets you change the number of working days so you can
-              use a divisor that matches the assumptions used by your employment
-              contract or payroll policy.
-            </p>
-
-            <h3 class="h5 fw-bold mt-5 mb-2">
-              Why can daily rates be different?
-            </h3>
-
-            <p class="text-secondary">
-              There is not always one universal divisor that applies to every
-              employee. Monthly-paid and daily-paid employees can be treated
-              differently, and employers may use different payroll conventions
-              depending on the employee's work schedule and compensation structure.
-            </p>
-
-            <p class="text-secondary">
-              Because of this, the daily rate shown by this calculator should be
-              treated as an estimate based on the monthly salary and working-day
-              divisor you enter.
-            </p>
-
-            <h3 class="h5 fw-bold mt-5 mb-2">
-              When can a daily rate be useful?
-            </h3>
-
-            <p class="text-secondary mb-3">
-              Knowing your estimated daily rate can help when:
-            </p>
-
-            <ul class="text-secondary">
-              <li>Comparing monthly and daily compensation</li>
-              <li>Understanding how much your monthly salary represents per workday</li>
-              <li>Estimating certain workplace pay calculations</li>
-              <li>Reviewing salary information before accepting a job offer</li>
-              <li>Comparing different work schedules or compensation arrangements</li>
-            </ul>
-
-            <h3 class="h5 fw-bold mt-5 mb-2">
-              Monthly salary vs. daily rate
-            </h3>
-
-            <p class="text-secondary">
-              Monthly salary and daily rate are not interchangeable. Your monthly
-              salary represents the agreed monthly compensation, while a daily rate
-              expresses that amount using a selected number of working days.
-            </p>
-
-            <p class="text-secondary">
-              For example, the same ₱42,000 monthly salary produces a different
-              estimated daily amount when divided by 22 working days instead of
-              26 days. This is why choosing the appropriate divisor is important.
-            </p>
-
-            <div class="table-responsive my-4">
-              <table class="table table-bordered align-middle">
+            <h3 class="h5 fw-bold mt-5 mb-3">Which factor applies to you?</h3>
+            <div class="table-responsive">
+              <table class="table table-bordered align-middle guide-table">
                 <thead class="table-light">
                   <tr>
-                    <th scope="col">Monthly Salary</th>
-                    <th scope="col">Working Days</th>
-                    <th scope="col">Estimated Daily Rate</th>
+                    <th scope="col">Work schedule</th>
+                    <th scope="col" class="text-end">Factor</th>
+                    <th scope="col" class="text-end">How it's derived</th>
+                    <th scope="col" class="text-end">₱42,000 a month</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>₱42,000</td>
-                    <td>22</td>
-                    <td>₱1,909.09</td>
-                  </tr>
-                  <tr>
-                    <td>₱42,000</td>
-                    <td>24</td>
-                    <td>₱1,750.00</td>
-                  </tr>
-                  <tr>
-                    <td>₱42,000</td>
-                    <td>26</td>
-                    <td>₱1,615.38</td>
-                  </tr>
+                  <tr><td>Monday to Friday; Saturdays and Sundays are unpaid rest days</td><td class="text-end">261</td><td class="text-end">365 − 104 weekend days</td><td class="text-end">₱1,931.03</td></tr>
+                  <tr><td>Monday to Saturday; Sunday is an unpaid rest day</td><td class="text-end">313</td><td class="text-end">365 − 52 Sundays</td><td class="text-end">₱1,610.22</td></tr>
+                  <tr><td>Paid for every day of the year, including rest days</td><td class="text-end">365</td><td class="text-end">All days</td><td class="text-end">₱1,380.82</td></tr>
                 </tbody>
               </table>
             </div>
+            <p class="text-secondary">Some employers use 262 or 314 in years with an extra weekday. Others use a
+              shortcut like 22 or 26 working days a month (264 or 312 a year). The difference is small, but it
+              changes every amount that's based on your daily rate.</p>
 
-            <h3 class="h5 fw-bold mt-5 mb-2">
-              Does the daily rate determine your actual payroll?
-            </h3>
+            <h3 class="h5 fw-bold mt-5 mb-2">Why the factor matters</h3>
+            <p class="text-secondary">The same ₱42,000 salary gives a daily rate of ₱1,931.03 on a five-day week but
+              only ₱1,610.22 on a six-day week. That ₱320.81 gap then carries into:</p>
+            <ul class="text-secondary">
+              <li><strong>Absence and tardiness deductions:</strong> a day without pay costs you one daily rate.</li>
+              <li><strong>Holiday and rest-day pay:</strong> the 200%, 130%, and other premiums are multiples of the
+                daily rate.</li>
+              <li><strong>Overtime and night differential:</strong> both start from the hourly rate, which is the
+                daily rate ÷ 8.</li>
+              <li><strong>Leave conversion and final pay:</strong> unused leave credits are usually paid out at the
+                daily rate.</li>
+            </ul>
 
-            <p class="text-secondary">
-              Not necessarily. Your employer's payroll system may use a specific
-              divisor or calculation method for a particular purpose. Overtime,
-              holiday pay, leave, absences, and other payroll calculations can also
-              have their own applicable rules.
-            </p>
-
-            <p class="text-secondary">
-              If you are checking an actual payroll calculation, compare the result
-              with your employment contract, company payroll policy, and official
-              payslip.
-            </p>
-
-            <p class="small text-secondary mt-4 mb-0">
-              <strong>Disclaimer:</strong>
-              This calculator provides an estimate for informational and planning
-              purposes. Actual daily rates may vary depending on your employment
-              arrangement, work schedule, payroll divisor, company policies, and
-              applicable rules.
-            </p>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="info-section border-top py-5" aria-labelledby="daily-rate-faq-heading">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-
-            <p class="eyebrow mb-2">Common questions</p>
-
-            <h2 id="daily-rate-faq-heading" class="h4 fw-bold mb-3">
-              Daily rate calculator FAQs
-            </h2>
-
-            <div class="list-group list-group-flush calculation-list">
-
-              <div class="list-group-item px-0 py-4">
-                <h3 class="h6 fw-bold mb-2">
-                  How do I calculate my daily rate from my monthly salary?
-                </h3>
-                <p class="text-secondary mb-0">
-                  Divide your monthly salary by the number of working days used as
-                  the divisor. The appropriate divisor can depend on your employment
-                  arrangement and payroll policy.
-                </p>
-              </div>
-
-              <div class="list-group-item px-0 py-4">
-                <h3 class="h6 fw-bold mb-2">
-                  What divisor should I use?
-                </h3>
-                <p class="text-secondary mb-0">
-                  Use the working-day divisor that applies to your employment
-                  arrangement or the purpose of your calculation. If you are unsure,
-                  check your employment contract or ask your employer's payroll
-                  department.
-                </p>
-              </div>
-
-              <div class="list-group-item px-0 py-4">
-                <h3 class="h6 fw-bold mb-2">
-                  Is daily rate the same as take-home pay?
-                </h3>
-                <p class="text-secondary mb-0">
-                  No. Daily rate is a way of expressing monthly compensation as a
-                  daily amount. Take-home pay is the amount remaining after applicable
-                  deductions.
-                </p>
-              </div>
-
-              <div class="list-group-item px-0 py-4">
-                <h3 class="h6 fw-bold mb-2">
-                  Can I use the daily rate for overtime or holiday pay?
-                </h3>
-                <p class="text-secondary mb-0">
-                  A daily rate can be relevant to some payroll calculations, but
-                  overtime and holiday pay can have their own applicable rules.
-                  Use the appropriate SahodPH calculator for those calculations.
-                </p>
-              </div>
-
-              <div class="list-group-item px-0 pt-4 pb-0">
-                <h3 class="h6 fw-bold mb-2">
-                  Why does my company's daily rate differ from this calculator?
-                </h3>
-                <p class="text-secondary mb-0">
-                  Your employer may use a different divisor or payroll convention.
-                  The calculator is an estimate based on the monthly salary and
-                  working-day count that you enter.
-                </p>
-              </div>
-
+            <h3 class="h5 fw-bold mt-5 mb-2">Going the other way: daily rate to monthly equivalent</h3>
+            <p class="text-secondary">Daily-paid workers comparing themselves with a monthly offer can reverse the
+              formula:</p>
+            <div class="formula-box">
+              <strong>Monthly equivalent = daily rate × annual factor ÷ 12</strong>
             </div>
+            <p class="text-secondary">A worker earning ₱700 a day on a six-day week has a monthly equivalent of
+              ₱700 × 313 ÷ 12 = <strong>₱18,258.33</strong>. On a five-day week, it's ₱700 × 261 ÷ 12 =
+              <strong>₱15,225.00</strong>.</p>
 
+            <h3 class="h5 fw-bold mt-5 mb-2">Basic salary only</h3>
+            <p class="text-secondary mb-0">Use your <em>basic</em> monthly salary. Allowances, commissions, and other
+              pay that isn't part of your basic wage are usually not included in the daily rate for premium-pay
+              purposes, unless your contract or company practice says otherwise.</p>
+
+            <aside class="source-box">
+              <h2 class="h6 fw-bold mb-2">Sources and review</h2>
+              <ul class="small text-secondary">
+                <li>DOLE Bureau of Working Conditions, Handbook on Workers' Statutory Monetary Benefits (equivalent
+                  monthly rate and factor computations)</li>
+                <li>Labor Code of the Philippines, Articles 83 and 94 (<a
+                    href="https://lawphil.net/statutes/presdecs/pd1974/pd_442_1974.html" target="_blank"
+                    rel="noopener">full text on Lawphil</a>)</li>
+              </ul>
+              <p class="small text-secondary mb-0">Last reviewed 24 September 2026. <a href="updates.html">See what
+                  changed</a> · <a href="contact.html">Report an error</a></p>
+            </aside>
           </div>
         </div>
       </div>
     </section>
-
-    <section class="info-section border-top py-5">
+    <section class="info-section border-top py-5" aria-labelledby="daily-faq-heading">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-8">
-
-            <p class="eyebrow mb-2">More salary tools</p>
-
-            <h2 class="h4 fw-bold mb-3">
-              Related Philippine salary calculators
-            </h2>
-
-            <p class="text-secondary mb-4">
-              Use other SahodPH calculators to explore different parts of your
-              compensation and workplace pay.
-            </p>
-
-            <nav class="related-links" aria-label="Related salary calculators">
-              <a href="./">Philippine Salary Calculator</a>
+            <p class="eyebrow mb-2">Common questions</p>
+            <h2 id="daily-faq-heading" class="h4 fw-bold mb-3">Daily rate FAQs</h2>
+            <div class="list-group list-group-flush calculation-list">
+              <div class="list-group-item px-0 py-4">
+                <h3 class="h6 fw-bold mb-2">What factor should I use if I work Monday to Friday?</h3>
+                <p class="text-secondary mb-0">261, unless your employer pays you for Saturdays and Sundays too. With
+                  261, your daily rate is your monthly salary × 12 ÷ 261.</p>
+              </div>
+              <div class="list-group-item px-0 py-4">
+                <h3 class="h6 fw-bold mb-2">Why not just divide by 30 or by the days in the month?</h3>
+                <p class="text-secondary mb-0">Because rest days aren't working days, and the number of workdays
+                  changes from month to month. An annual factor gives the same daily rate all year.</p>
+              </div>
+              <div class="list-group-item px-0 py-4">
+                <h3 class="h6 fw-bold mb-2">How much is deducted when I'm absent for a day?</h3>
+                <p class="text-secondary mb-0">One daily rate for an unpaid absence. On ₱42,000 a month with a 261
+                  factor, that's ₱1,931.03.</p>
+              </div>
+              <div class="list-group-item px-0 pt-4 pb-0">
+                <h3 class="h6 fw-bold mb-2">Is the daily rate the same as my take-home pay per day?</h3>
+                <p class="text-secondary mb-0">No. It's a gross figure before SSS, PhilHealth, Pag-IBIG, and
+                  withholding tax. Use the <a href="./">take-home pay calculator</a> to see what's left after
+                  deductions.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="info-section border-top py-5" aria-labelledby="related-heading">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <h2 id="related-heading" class="h5 fw-bold mb-3">Related calculators</h2>
+            <nav class="related-links" aria-label="Related payroll calculators">
               <a href="hourly-rate.html">Hourly Rate Calculator</a>
-              <a href="overtime-pay.html">Overtime Pay Calculator</a>
               <a href="holiday-pay.html">Holiday Pay Calculator</a>
-              <a href="night-differential.html">Night Differential Calculator</a>
               <a href="thirteenth-month-pay.html">13th Month Pay Calculator</a>
-              <a href="compare.html">Compare Salaries</a>
+              <a href="./">Take-Home Pay Calculator</a>
             </nav>
-
           </div>
         </div>
       </div>
     </section>
   </main>
-  <footer class="border-top bg-white py-4">
+  <footer class="site-footer border-top bg-white py-5">
     <div class="container">
-      <nav class="related-links small" aria-label="Footer navigation"><a href="./">Salary calculator</a><a
-          href="compare.html">Compare salaries</a><a href="about.html">About</a><a href="privacy-policy.html">Privacy
-          Policy</a><a href="terms-of-use.html">Terms of Use</a><a href="disclaimer.html">Disclaimer</a><a
-          href="contact.html">Contact</a></nav>
-      <p class="small text-secondary mb-0 mt-3">© 2026 SahodPH. Independent informational calculator website.</p>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <a href="./" aria-label="SahodPH home"><img src="assets/img/sahodph-horizontal-logo.png" alt="SahodPH"
+              height="34"></a>
+          <p class="small text-secondary mt-3 mb-0">Free Philippine payroll calculators and guides based on the Labor
+            Code, BIR withholding tax tables, and the official SSS, PhilHealth, and Pag-IBIG contribution schedules.</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <h2 class="footer-heading">Calculators</h2>
+          <ul class="footer-links">
+            <li><a href="./">Salary calculator</a></li>
+            <li><a href="compare.html">Compare salaries</a></li>
+            <li><a href="thirteenth-month-pay.html">13th month pay</a></li>
+            <li><a href="overtime-pay.html">Overtime pay</a></li>
+            <li><a href="holiday-pay.html">Holiday pay</a></li>
+            <li><a href="night-differential.html">Night differential</a></li>
+            <li><a href="daily-rate.html">Daily rate</a></li>
+            <li><a href="hourly-rate.html">Hourly rate</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-2">
+          <h2 class="footer-heading">Guides</h2>
+          <ul class="footer-links">
+            <li><a href="rates.html">Deduction tables</a></li>
+            <li><a href="take-home-pay-table.html">Take-home pay table</a></li>
+            <li><a href="updates.html">Site updates</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3">
+          <h2 class="footer-heading">SahodPH</h2>
+          <ul class="footer-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-of-use.html">Terms of Use</a></li>
+            <li><a href="disclaimer.html">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="small text-secondary border-top pt-3 mt-4 mb-0">© 2026 SahodPH. Independent website, not affiliated
+        with SSS, PhilHealth, Pag-IBIG, BIR, or DOLE. Rates and rules last reviewed 24 September 2026.</p>
     </div>
   </footer>
 </body>
