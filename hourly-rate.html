@@ -14,12 +14,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description"
-    content="Calculate an estimated Philippine hourly rate from your daily rate and regular work hours.">
+    content="Convert a daily rate to an hourly rate for Philippine payroll, with monthly-to-hourly conversions for 5-day and 6-day work weeks and the hourly base used for overtime and night differential.">
   <meta name="theme-color" content="#0d6efd">
   <link rel="canonical" href="https://sahodph.online/hourly-rate.html">
   <meta property="og:title" content="Hourly Rate Calculator Philippines | SahodPH">
   <meta property="og:description"
-    content="Estimate your Philippine hourly salary from daily pay and regular work hours.">
+    content="Convert a daily or monthly salary to the hourly rate used for Philippine overtime and night differential.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sahodph.online/hourly-rate.html">
   <meta property="og:site_name" content="SahodPH">
@@ -27,9 +27,9 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Hourly Rate Calculator Philippines | SahodPH">
   <meta name="twitter:description"
-    content="Estimate your Philippine hourly salary from daily pay and regular work hours.">
+    content="Convert a daily or monthly salary to the hourly rate used for Philippine overtime and night differential.">
   <meta name="twitter:image" content="https://sahodph.online/assets/img/sahodph-main-logo.png">
-  <title>Hourly Rate Calculator Philippines | SahodPH</title>
+  <title>Hourly Rate Calculator Philippines: Daily to Hourly Pay | SahodPH</title>
   <link rel="icon" type="image/png" href="assets/img/sahodph-icon.png">
   <link rel="apple-touch-icon" href="assets/img/sahodph-icon.png">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
@@ -37,26 +37,38 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/style.css">
   <script src="assets/js/calculator-pages.js" defer></script>
-  <script src="assets/js/ad-placeholders.js" defer></script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6021896522356181"
     crossorigin="anonymous"></script>
 </head>
 
 <body class="calculator-page">
   <header class="site-header border-bottom bg-white">
-    <nav class="container py-3 d-flex align-items-center justify-content-between" aria-label="Primary navigation"><a
-        class="navbar-brand" href="./"><img src="assets/img/sahodph-horizontal-logo.png" alt="SahodPH"
-          height="42"></a><a class="btn btn-sm btn-outline-primary" href="./">Salary Calculator</a></nav>
+    <div class="container pt-3 pb-2">
+      <a class="navbar-brand" href="./" aria-label="SahodPH home"><img src="assets/img/sahodph-horizontal-logo.png"
+          alt="SahodPH" height="42"></a>
+    </div>
+    <nav class="site-nav container" aria-label="Primary navigation">
+      <a href="./">Salary</a>
+      <a href="compare.html">Compare</a>
+      <a href="thirteenth-month-pay.html">13th Month</a>
+      <a href="overtime-pay.html">Overtime</a>
+      <a href="holiday-pay.html">Holiday Pay</a>
+      <a href="night-differential.html">Night Diff</a>
+      <a href="daily-rate.html">Daily Rate</a>
+      <a href="hourly-rate.html" aria-current="page">Hourly Rate</a>
+      <a href="rates.html">Deduction Tables</a>
+      <a href="take-home-pay-table.html">Take-Home Table</a>
+    </nav>
   </header>
   <main>
     <section class="hero-section py-5">
       <div class="container">
         <div class="row justify-content-center text-center">
           <div class="col-lg-8">
-            <p class="eyebrow mb-2">A clear rate for every hour</p>
+            <p class="eyebrow mb-2">Daily to hourly</p>
             <h1 class="display-5 fw-bold mb-3">Hourly Rate Calculator</h1>
-            <p class="lead text-secondary mb-0">Estimate your Philippine hourly pay from your daily rate and regular
-              hours per workday.</p>
+            <p class="lead text-secondary mb-0">Find your basic hourly rate, the number every overtime and night
+              differential computation starts from.</p>
           </div>
         </div>
       </div>
@@ -67,19 +79,23 @@
           <div class="col-lg-6">
             <div class="calculator-card card border-0 shadow-sm h-100">
               <div class="card-body p-4 p-md-5">
-                <h2 id="calculator-heading" class="h4 fw-bold mb-4">Enter your details</h2>
+                <h2 id="calculator-heading" class="h4 fw-bold mb-4">Enter daily pay details</h2>
                 <form data-calculator-form data-calculator="hourly-rate">
-                  <div class="mb-3"><label class="form-label fw-semibold" for="daily-rate">Daily Rate</label>
+                  <div class="mb-3"><label class="form-label fw-semibold" for="daily-rate">Basic Daily Rate</label>
                     <div class="input-group input-group-lg"><span class="input-group-text">₱</span><input
                         class="form-control" id="daily-rate" name="dailyRate" type="number" min="0" step="0.01"
-                        value="1615.38" required></div>
+                        value="1931.03" inputmode="decimal" required></div>
+                    <div class="form-text">Paid monthly? Get your daily rate from the <a href="daily-rate.html">daily
+                        rate calculator</a> first.</div>
                   </div>
                   <div class="mb-4"><label class="form-label fw-semibold" for="hours-per-day">Regular Hours Per
                       Day</label>
                     <div class="input-group input-group-lg"><input class="form-control" id="hours-per-day"
-                        name="hoursPerDay" type="number" min="1" step="0.5" value="8" required><span
-                        class="input-group-text">hours</span></div>
-                  </div><button class="btn btn-primary btn-lg w-100" type="submit">Calculate Hourly Rate <span
+                        name="hoursPerDay" type="number" min="1" max="12" step="0.5" value="8" inputmode="decimal"
+                        required><span class="input-group-text">hours</span></div>
+                    <div class="form-text">Normal hours are 8 a day, not counting the unpaid meal break.</div>
+                  </div>
+                  <button class="btn btn-primary btn-lg w-100" type="submit">Calculate Hourly Rate <span
                       aria-hidden="true">→</span></button>
                 </form>
               </div>
@@ -89,291 +105,180 @@
             <div class="result-card card border-0 shadow-sm h-100" aria-live="polite">
               <div class="card-body p-4 p-md-5">
                 <p class="eyebrow text-white-50 mb-2">Your estimate</p>
-                <h2 class="h4 fw-bold mb-4">Estimated Hourly Rate</h2>
-                <div class="take-home-row border-top pt-4"><span>Estimated amount</span><strong
-                    data-result>₱201.92</strong></div>
-                <p class="small text-white-50 mt-3 mb-0">This hourly rate can help estimate overtime, night
-                  differential, and other hourly-based pay.</p>
+                <h2 class="h4 fw-bold mb-4">Hourly Rate</h2>
+                <div class="take-home-row border-top pt-4"><span>Basic hourly rate</span><strong
+                    data-result>₱241.38</strong></div>
+                <p class="result-note text-white mt-3 mb-2" data-result-note>Ordinary-day overtime at 125% would be
+                  ₱301.73 per hour.</p>
+                <p class="small text-white-50 mb-0">Use this figure in the <a class="link-light"
+                    href="overtime-pay.html">overtime</a> and <a class="link-light"
+                    href="night-differential.html">night differential</a> calculators.</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="ad-slot mt-4" aria-label="Advertisement">Advertisement</div>
       </div>
     </section>
-    <section class="how-section border-top py-5" aria-labelledby="hourly-rate-guide-heading">
+    <section class="how-section border-top py-5" aria-labelledby="hourly-guide-heading">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-8">
+            <p class="eyebrow mb-2">Hourly rate guide</p>
+            <h2 id="hourly-guide-heading" class="h3 fw-bold mb-3">How to compute your hourly rate</h2>
+            <p class="text-secondary">Article 83 of the Labor Code sets normal working hours at no more than 8 a day.
+              Your basic hourly rate is your daily rate spread over those 8 hours:</p>
 
-            <p class="eyebrow mb-2">Hourly salary guide</p>
-
-            <h2 id="hourly-rate-guide-heading" class="h3 fw-bold mb-3">
-              How to calculate your hourly rate
-            </h2>
-
-            <p class="text-secondary mb-4">
-              An hourly rate expresses your daily pay as an amount earned for each
-              regular working hour. It can be useful when estimating hourly
-              compensation, comparing work arrangements, or understanding the
-              starting point for certain hourly-based calculations.
-            </p>
-
-            <h3 class="h5 fw-bold mt-4 mb-2">
-              Hourly rate formula
-            </h3>
-
-            <div class="bg-light rounded p-4 my-3">
-              <strong>
-                Estimated hourly rate = Daily rate ÷ Regular hours per day
-              </strong>
+            <div class="formula-box">
+              <strong>Hourly rate = basic daily rate ÷ 8</strong><br>
+              <span class="text-secondary">or, from a monthly salary: monthly basic salary × 12 ÷ annual factor ÷ 8</span>
             </div>
 
-            <p class="text-secondary">
-              For example, if your daily rate is <strong>₱1,615.38</strong> and you
-              normally work 8 regular hours per day:
-            </p>
+            <p class="text-secondary">The meal break doesn't count. Article 85 gives at least 60 minutes for meals,
+              and that time isn't paid, so an 8-to-5 schedule with an hour's lunch is 8 working hours, not 9.</p>
 
-            <div class="bg-light rounded p-4 mb-4">
-              <strong>₱1,615.38 ÷ 8 = ₱201.92 per hour</strong>
-            </div>
-
-            <p class="text-secondary">
-              You can enter a different number of regular hours if your normal work
-              schedule uses a different daily working period.
-            </p>
-
-            <h3 class="h5 fw-bold mt-5 mb-2">
-              Why your hourly rate matters
-            </h3>
-
-            <p class="text-secondary">
-              Knowing your estimated hourly rate can make it easier to understand
-              how your daily or monthly compensation translates into an hourly
-              amount. It can also provide a starting point for other calculations
-              involving hourly pay.
-            </p>
-
-            <p class="text-secondary mb-3">
-              For example, an hourly rate may be useful when reviewing:
-            </p>
-
-            <ul class="text-secondary">
-              <li>Regular hourly compensation</li>
-              <li>Overtime calculations</li>
-              <li>Night differential estimates</li>
-              <li>Different work schedules</li>
-              <li>Job offers with different working hours</li>
-            </ul>
-
-            <h3 class="h5 fw-bold mt-5 mb-2">
-              Example hourly rate calculations
-            </h3>
-
-            <p class="text-secondary mb-4">
-              The same daily rate can produce different hourly rates depending on
-              the number of regular working hours.
-            </p>
-
+            <h3 class="h5 fw-bold mt-5 mb-3">Monthly salary to hourly rate</h3>
+            <p class="text-secondary">Monthly-paid employees need the annual factor first (see the <a
+                href="daily-rate.html">daily rate guide</a>). Here is what common salaries work out to:</p>
             <div class="table-responsive">
-              <table class="table table-bordered align-middle">
+              <table class="table table-bordered align-middle guide-table">
                 <thead class="table-light">
                   <tr>
-                    <th scope="col">Daily Rate</th>
-                    <th scope="col">Regular Hours</th>
-                    <th scope="col">Estimated Hourly Rate</th>
+                    <th scope="col">Monthly basic salary</th>
+                    <th scope="col" class="text-end">Mon to Fri (261)</th>
+                    <th scope="col" class="text-end">Mon to Sat (313)</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>₱1,615.38</td>
-                    <td>8 hours</td>
-                    <td>₱201.92</td>
-                  </tr>
-                  <tr>
-                    <td>₱1,615.38</td>
-                    <td>7.5 hours</td>
-                    <td>₱215.38</td>
-                  </tr>
-                  <tr>
-                    <td>₱1,615.38</td>
-                    <td>10 hours</td>
-                    <td>₱161.54</td>
-                  </tr>
+                  <tr><td>₱15,000</td><td class="text-end">₱86.21</td><td class="text-end">₱71.88</td></tr>
+                  <tr><td>₱20,000</td><td class="text-end">₱114.94</td><td class="text-end">₱95.85</td></tr>
+                  <tr><td>₱25,000</td><td class="text-end">₱143.68</td><td class="text-end">₱119.81</td></tr>
+                  <tr><td>₱30,000</td><td class="text-end">₱172.41</td><td class="text-end">₱143.77</td></tr>
+                  <tr><td>₱42,000</td><td class="text-end">₱241.38</td><td class="text-end">₱201.28</td></tr>
+                  <tr><td>₱50,000</td><td class="text-end">₱287.36</td><td class="text-end">₱239.62</td></tr>
+                  <tr><td>₱75,000</td><td class="text-end">₱431.03</td><td class="text-end">₱359.42</td></tr>
+                  <tr><td>₱100,000</td><td class="text-end">₱574.71</td><td class="text-end">₱479.23</td></tr>
                 </tbody>
               </table>
             </div>
+            <p class="small text-secondary">Computed as monthly salary × 12 ÷ factor ÷ 8, rounded to the centavo.</p>
 
-            <h3 class="h5 fw-bold mt-5 mb-2">
-              Daily rate and hourly rate are not the same
-            </h3>
+            <h3 class="h5 fw-bold mt-5 mb-2">What the hourly rate is used for</h3>
+            <ul class="text-secondary">
+              <li><strong>Overtime:</strong> 125% of the hourly rate on an ordinary day, 169% on a rest day, 260% on
+                a regular holiday.</li>
+              <li><strong>Night differential:</strong> at least 10% of the hourly rate for each hour worked from
+                10 PM to 6 AM.</li>
+              <li><strong>Tardiness and undertime:</strong> late minutes are commonly deducted at the hourly rate ÷
+                60 per minute.</li>
+            </ul>
 
-            <p class="text-secondary">
-              Your daily rate represents your estimated compensation for a workday,
-              while your hourly rate expresses that amount over your regular working
-              hours. Changing the number of regular hours changes the resulting
-              hourly amount even when the daily rate stays the same.
-            </p>
+            <h3 class="h5 fw-bold mt-5 mb-2">Compressed workweeks and shorter days</h3>
+            <p class="text-secondary mb-0">Under an approved compressed workweek, for example four 10-hour days or
+              five 9.6-hour days, your pay for the week doesn't change but each day is longer. Enter your scheduled
+              hours per day to see the hourly equivalent. Part-time employees on fewer than 8 hours should enter
+              their actual daily hours.</p>
 
-            <h3 class="h5 fw-bold mt-5 mb-2">
-              Can this hourly rate be used for overtime?
-            </h3>
-
-            <p class="text-secondary">
-              The estimated hourly rate can be used as a starting point for
-              understanding hourly-based compensation. However, overtime pay can
-              involve additional rules and applicable premium rates, so the hourly
-              rate alone does not determine the final overtime amount.
-            </p>
-
-            <p class="text-secondary">
-              For an overtime estimate, use the SahodPH Overtime Pay Calculator and
-              make sure the assumptions match your employment situation.
-            </p>
-
-            <h3 class="h5 fw-bold mt-5 mb-2">
-              Why your employer's hourly rate may be different
-            </h3>
-
-            <p class="text-secondary">
-              Employers may use specific payroll formulas, divisor conventions, or
-              compensation rules when calculating hourly-based pay. The result from
-              this calculator is therefore a planning estimate based on the daily
-              rate and regular hours you enter.
-            </p>
-
-            <p class="text-secondary">
-              If you are checking an actual payroll calculation, compare the result
-              with your employment contract, company payroll policy, and official
-              payslip.
-            </p>
-
-            <p class="small text-secondary mt-4 mb-0">
-              <strong>Disclaimer:</strong>
-              This calculator provides an estimate for informational and planning
-              purposes only. Actual hourly rates may vary depending on your
-              employment arrangement, regular working hours, payroll policies,
-              divisor rules, and applicable government rules.
-            </p>
-
+            <aside class="source-box">
+              <h2 class="h6 fw-bold mb-2">Sources and review</h2>
+              <ul class="small text-secondary">
+                <li>Labor Code of the Philippines, Articles 83, 85, 86 and 87 (<a
+                    href="https://lawphil.net/statutes/presdecs/pd1974/pd_442_1974.html" target="_blank"
+                    rel="noopener">full text on Lawphil</a>)</li>
+                <li>DOLE Bureau of Working Conditions, Handbook on Workers' Statutory Monetary Benefits</li>
+              </ul>
+              <p class="small text-secondary mb-0">Last reviewed 24 September 2026. <a href="updates.html">See what
+                  changed</a> · <a href="contact.html">Report an error</a></p>
+            </aside>
           </div>
         </div>
       </div>
     </section>
-    <section class="info-section border-top py-5" aria-labelledby="hourly-rate-faq-heading">
+    <section class="info-section border-top py-5" aria-labelledby="hourly-faq-heading">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-8">
-
             <p class="eyebrow mb-2">Common questions</p>
-
-            <h2 id="hourly-rate-faq-heading" class="h4 fw-bold mb-3">
-              Hourly rate calculator FAQs
-            </h2>
-
+            <h2 id="hourly-faq-heading" class="h4 fw-bold mb-3">Hourly rate FAQs</h2>
             <div class="list-group list-group-flush calculation-list">
-
               <div class="list-group-item px-0 py-4">
-                <h3 class="h6 fw-bold mb-2">
-                  How do I calculate my hourly rate?
-                </h3>
-                <p class="text-secondary mb-0">
-                  Divide your daily rate by the number of regular working hours per
-                  day. The calculator uses the daily rate and hours you enter to
-                  produce an estimated hourly amount.
-                </p>
+                <h3 class="h6 fw-bold mb-2">Should I divide by 8 or 9 hours?</h3>
+                <p class="text-secondary mb-0">By 8. A 9-hour day at the office usually includes a one-hour unpaid
+                  meal break, which isn't working time.</p>
               </div>
-
               <div class="list-group-item px-0 py-4">
-                <h3 class="h6 fw-bold mb-2">
-                  What if I work more than 8 hours?
-                </h3>
-                <p class="text-secondary mb-0">
-                  Enter the number of regular working hours that applies to the
-                  calculation you are making. Hours worked beyond regular hours may
-                  be treated separately under applicable overtime rules.
-                </p>
+                <h3 class="h6 fw-bold mb-2">What is the hourly rate for ₱20,000 a month?</h3>
+                <p class="text-secondary mb-0">₱114.94 on a Monday-to-Friday schedule (₱20,000 × 12 ÷ 261 ÷ 8), or
+                  ₱95.85 on a Monday-to-Saturday schedule.</p>
               </div>
-
-              <div class="list-group-item px-0 py-4">
-                <h3 class="h6 fw-bold mb-2">
-                  Is hourly rate the same as my take-home pay?
-                </h3>
-                <p class="text-secondary mb-0">
-                  No. Hourly rate expresses your daily pay as an hourly amount.
-                  Take-home pay refers to compensation remaining after applicable
-                  deductions.
-                </p>
-              </div>
-
-              <div class="list-group-item px-0 py-4">
-                <h3 class="h6 fw-bold mb-2">
-                  Can I use this calculator for night differential?
-                </h3>
-                <p class="text-secondary mb-0">
-                  The hourly rate can help you understand the starting hourly amount,
-                  but night differential calculations may involve additional
-                  applicable rules. Use the dedicated Night Differential Calculator
-                  for that calculation.
-                </p>
-              </div>
-
               <div class="list-group-item px-0 pt-4 pb-0">
-                <h3 class="h6 fw-bold mb-2">
-                  Why is my employer's hourly rate different?
-                </h3>
-                <p class="text-secondary mb-0">
-                  Your employer may use a different payroll formula, divisor, or
-                  compensation structure. SahodPH provides an estimate based on the
-                  inputs you provide.
-                </p>
+                <h3 class="h6 fw-bold mb-2">Is the hourly rate before or after deductions?</h3>
+                <p class="text-secondary mb-0">Before. It's a gross figure. SSS, PhilHealth, Pag-IBIG, and withholding
+                  tax are computed on your monthly pay, not per hour.</p>
               </div>
-
             </div>
-
           </div>
         </div>
       </div>
     </section>
-
-    <section class="info-section border-top py-5">
+    <section class="info-section border-top py-5" aria-labelledby="related-heading">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-8">
-
-            <p class="eyebrow mb-2">More salary tools</p>
-
-            <h2 class="h4 fw-bold mb-3">
-              Related Philippine salary calculators
-            </h2>
-
-            <p class="text-secondary mb-4">
-              Explore other SahodPH calculators for daily pay, overtime, night
-              differential, holiday pay, and other workplace compensation.
-            </p>
-
-            <nav class="related-links" aria-label="Related salary calculators">
-              <a href="./">Philippine Salary Calculator</a>
+            <h2 id="related-heading" class="h5 fw-bold mb-3">Related calculators</h2>
+            <nav class="related-links" aria-label="Related payroll calculators">
               <a href="daily-rate.html">Daily Rate Calculator</a>
               <a href="overtime-pay.html">Overtime Pay Calculator</a>
               <a href="night-differential.html">Night Differential Calculator</a>
-              <a href="holiday-pay.html">Holiday Pay Calculator</a>
-              <a href="thirteenth-month-pay.html">13th Month Pay Calculator</a>
-              <a href="compare.html">Compare Salaries</a>
+              <a href="./">Take-Home Pay Calculator</a>
             </nav>
-
           </div>
         </div>
       </div>
     </section>
   </main>
-  <footer class="border-top bg-white py-4">
+  <footer class="site-footer border-top bg-white py-5">
     <div class="container">
-      <nav class="related-links small" aria-label="Footer navigation"><a href="./">Salary calculator</a><a
-          href="compare.html">Compare salaries</a><a href="about.html">About</a><a href="privacy-policy.html">Privacy
-          Policy</a><a href="terms-of-use.html">Terms of Use</a><a href="disclaimer.html">Disclaimer</a><a
-          href="contact.html">Contact</a></nav>
-      <p class="small text-secondary mb-0 mt-3">© 2026 SahodPH. Independent informational calculator website.</p>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <a href="./" aria-label="SahodPH home"><img src="assets/img/sahodph-horizontal-logo.png" alt="SahodPH"
+              height="34"></a>
+          <p class="small text-secondary mt-3 mb-0">Free Philippine payroll calculators and guides based on the Labor
+            Code, BIR withholding tax tables, and the official SSS, PhilHealth, and Pag-IBIG contribution schedules.</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <h2 class="footer-heading">Calculators</h2>
+          <ul class="footer-links">
+            <li><a href="./">Salary calculator</a></li>
+            <li><a href="compare.html">Compare salaries</a></li>
+            <li><a href="thirteenth-month-pay.html">13th month pay</a></li>
+            <li><a href="overtime-pay.html">Overtime pay</a></li>
+            <li><a href="holiday-pay.html">Holiday pay</a></li>
+            <li><a href="night-differential.html">Night differential</a></li>
+            <li><a href="daily-rate.html">Daily rate</a></li>
+            <li><a href="hourly-rate.html">Hourly rate</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-2">
+          <h2 class="footer-heading">Guides</h2>
+          <ul class="footer-links">
+            <li><a href="rates.html">Deduction tables</a></li>
+            <li><a href="take-home-pay-table.html">Take-home pay table</a></li>
+            <li><a href="updates.html">Site updates</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3">
+          <h2 class="footer-heading">SahodPH</h2>
+          <ul class="footer-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-of-use.html">Terms of Use</a></li>
+            <li><a href="disclaimer.html">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="small text-secondary border-top pt-3 mt-4 mb-0">© 2026 SahodPH. Independent website, not affiliated
+        with SSS, PhilHealth, Pag-IBIG, BIR, or DOLE. Rates and rules last reviewed 24 September 2026.</p>
     </div>
   </footer>
 </body>

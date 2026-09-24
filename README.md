@@ -35,9 +35,19 @@ Open [`compare.html`](compare.html) to compare a current monthly salary with a n
 - [`night-differential.html`](night-differential.html)
 - [`holiday-pay.html`](holiday-pay.html)
 
-These pages share the formulas and rendering utilities in `assets/js/calculator-pages.js` and run as static files on GitHub Pages.
+These pages share the formulas and rendering utilities in `assets/js/calculator-pages.js` and run as static files on GitHub Pages. Overtime, holiday, and night differential multipliers follow the DOLE Handbook on Workers' Statutory Monetary Benefits; the daily rate uses the DOLE annual factor method (261, 313, or 365 days).
+
+## Guides
+
+- [`rates.html`](rates.html): SSS, PhilHealth, Pag-IBIG, and BIR withholding tax tables with sources
+- [`take-home-pay-table.html`](take-home-pay-table.html): take-home pay for 22 salary levels, generated from `calculateSalaryFromInputs()`
+- [`updates.html`](updates.html): dated changelog of corrections and rate updates
+
+When a rate changes, update `SALARY_RULES`, regenerate the take-home table and worked examples from the engine, bump the "Last reviewed" dates, and add an entry to `updates.html`.
 
 ## Informational pages
+
+The shared header and footer are duplicated in every page (there is no build step); keep them identical when editing.
 
 - [`about.html`](about.html)
 - [`privacy-policy.html`](privacy-policy.html)
@@ -47,9 +57,9 @@ These pages share the formulas and rendering utilities in `assets/js/calculator-
 
 The informational pages use the same responsive Bootstrap design and clearly state that SahodPH is independent and not affiliated with SSS, PhilHealth, Pag-IBIG, BIR, or any Philippine government agency.
 
-## Advertisement placeholders
+## Advertising
 
-`assets/js/ad-placeholders.js` adds stable, muted `Advertisement` placeholders below the header and near the bottom of every page. Calculator pages also retain one mid-content placeholder between the calculator and explanation sections. Replace those `.ad-slot` elements with approved Google AdSense units when the site is ready; the placeholders are intentionally outside forms and calculator controls.
+Ads are served by Google AdSense Auto ads through the `adsbygoogle.js` tag in each page head. Do not add visible "Advertisement" placeholder boxes; empty ad slots count against AdSense site review.
 
 ## SEO deployment note
 

@@ -3,7 +3,7 @@ const currencyFormatter = new Intl.NumberFormat('en-PH', { style: 'currency', cu
 
 // Keep policy assumptions together so official updates only touch this object.
 const SALARY_RULES = {
-  sss: { employeeRate: 0.05, minimumMSC: 4_000, maximumMSC: 35_000, mscStep: 500 },
+  sss: { employeeRate: 0.05, minimumMSC: 5_000, maximumMSC: 35_000, mscStep: 500 },
   philHealth: { premiumRate: 0.05, employeeShare: 0.5, incomeFloor: 10_000, incomeCeiling: 100_000 },
   pagIBIG: { lowIncomeCeiling: 1_500, lowIncomeRate: 0.01, standardRate: 0.02, maximumFundSalary: 10_000 },
   withholdingTax: [
@@ -52,7 +52,7 @@ function calculateSSS(monthlyRemuneration) {
   const remuneration = toNumber(monthlyRemuneration);
   if (remuneration === 0) return 0;
   const mscStep = SALARY_RULES.sss.mscStep;
-  // Estimate: regular employee remuneration maps to the SSS MSC schedule.
+  // Estimate: regular employee remuneration maps to the 2025 SSS MSC schedule (₱5,000–₱35,000).
   // The 5% employee SS share is capped at the ₱35,000 MSC / ₱1,750.
   const monthlyMSC = Math.min(Math.max(Math.round(remuneration / mscStep) * mscStep, minimumMSC), maximumMSC);
   return monthlyMSC * employeeRate;
